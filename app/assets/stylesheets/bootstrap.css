@@ -5,14 +5,18 @@
  * http://www.gridelicious.net
  *
  * Treble theme v1.0.0
- */.page-welcome{width:100%;height:100%;position:relative;overflow:hidden;text-align:center;background:#292929 url(/images/welcome.jpg) 50% 0 repeat fixed;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
+ */
+.red {
+	color: red;
+}
+ .page-welcome{width:100%;height:100%;position:relative;overflow:hidden;text-align:center;background:#292929 url(/images/welcome.jpg) 50% 0 repeat fixed;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
  .page-welcome .logo{-webkit-transition:all .5s ease-in-out;-moz-transition:all .5s ease-in-out;-o-transition:all .5s ease-in-out;transition:all .5s ease-in-out;height:140px;position:relative;width:140px;margin:0 auto}
  .page-welcome .logo .scrollNormal{opacity:1;filter:alpha(opacity=100);position:absolute;top:0;left:50%;margin-left:-70px;-webkit-transition:all .5s ease-in-out;-moz-transition:all .5s ease-in-out;-o-transition:all .5s ease-in-out;transition:all .5s ease-in-out}
  .page-welcome .logo .scrollDown{opacity:0;filter:alpha(opacity=0);position:absolute;top:0;left:50%;margin-left:-70px;-webkit-transition:all .5s ease-in-out;-moz-transition:all .5s ease-in-out;-o-transition:all .5s ease-in-out;transition:all .5s ease-in-out}
  .page-welcome .logo:hover .scrollNormal{opacity:0;filter:alpha(opacity=0);-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-ms-transform:rotate(360deg);-o-transform:rotate(360deg);transform:rotate(360deg)}
  .page-welcome .logo:hover .scrollDown{opacity:1;filter:alpha(opacity=100);-webkit-transform:rotate(-360deg);-moz-transform:rotate(-360deg);-ms-transform:rotate(-360deg);-o-transform:rotate(-360deg);transform:rotate(-360deg)}
  .page-welcome #welcome-messages{margin-top:35px;width:100%;overflow:hidden;position:relative;z-index:123123}
- .page-welcome #welcome-messages h1{margin:0;padding-top:10px;padding-bottom:5px}
+ .page-welcome #welcome-messages h1{color: #fff; margin:0;padding-top:10px;padding-bottom:5px}
  .page-welcome #welcome-messages ul,.page-welcome #welcome-messages li{margin:0;padding:0}
  .page-welcome #welcome-messages.divider:after{margin:auto auto 14px;padding-bottom:5px}
  .page-welcome #welcome-messages+p{font-weight:bold;text-transform:uppercase;margin-top:10px;font-weight:800;letter-spacing:2px}
@@ -96,7 +100,7 @@
  .page-contact .container{position:relative;z-index:2}
  .page-contact #map-image{position:absolute;top:0;left:0;bottom:0;right:0;z-index:1;opacity:.1;filter:alpha(opacity=10);overflow:hidden}
  .page-contact #map-image img{height:100%;width:100%}
- .page-contact form input[type='email'],.page-contact form input[type='text']{background-color:#ccc;color:#666;font-size:.8em}
+ .page-contact form input[type='email'],.page-contact form input[type='text']{background-color:#fff;color:#666;font-size:.8em}
  .page-contact form input[type='email']:focus,.page-contact form input[type='text']:focus{background-color:#fff}
  .page-contact form textarea{background-color:#ccc;color:#666;font-size:.8em}
  .page-contact form textarea:focus{background-color:#fff}

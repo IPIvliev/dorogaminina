@@ -19,7 +19,7 @@
 		slideSelector: '',
 		infiniteLoop: true,
 		hideControlOnEnd: false,
-		speed: 500,
+		speed: 1000,
 		easing: null,
 		slideMargin: 0,
 		startSlide: 0,
@@ -1217,7 +1217,7 @@
 			// create an interval
 			slider.interval = setInterval(function(){
 				slider.settings.autoDirection == 'next' ? el.goToNextSlide() : el.goToPrevSlide();
-			}, slider.settings.pause);
+			}, 2500);
 			// if auto controls are displayed and preventControlUpdate is not true
 			if (slider.settings.autoControls && preventControlUpdate != true) updateAutoControls('stop');
 		}
