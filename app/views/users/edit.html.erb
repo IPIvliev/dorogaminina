@@ -1,0 +1,141 @@
+   <!-- NAVIGATION -->
+    <nav class="fixed-top1" id="navigation">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span12 center">
+                    <!-- LOGO -->
+                    <a class="brand pull-left" href="./">
+                        <img src="assets/images/logo.png" alt="Treble">
+                    </a>
+                    <!-- END LOGO -->
+
+                    <!-- MOBILE MENU BUTTON -->
+                    <div class="mobile-menu" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </div>
+                    <!-- END MOBILE MENU BUTTON -->
+                    
+                    <!-- MAIN MENU -->
+                    <ul id="main-menu" class="nav-collapse collapse">
+                        <li><a href="/index.html#page-welcome">Home</a></li>
+                        <li><a href="/index.html#page-work">Work</a></li>
+                        <li><a href="/index.html#page-features">Features</a></li>
+                        <li><a href="/index.html#page-about">About</a></li>
+                        <li><a href="/index.html#page-blog">Blog</a></li>
+                        <li><a href="/index.html#page-contact">Contact</a></li>
+                    </ul>
+                    <!-- END MAIN MENU -->
+                    
+                    <!-- SOCIAL ICONS -->
+                    <div class="social-icons hover-big pull-right">
+                        <a href="#" class="sicon-facebook"><i>Facebook</i></a>
+                        <a href="#" class="sicon-twitter"><i>Twitter</i></a>
+                        <a href="#" class="sicon-linkedin"><i>LinkedIn</i></a>
+                        <a href="#" class="sicon-youtube"><i>Youtube</i></a>
+                        <a href="#" class="sicon-pinterest"><i>Pinterest</i></a>
+                    </div>
+                    <!-- END SOCIAL ICONS -->
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- END NAVIGATION -->
+
+
+
+
+
+
+    <div class="pages black-bg white page-contact" id="page-contact">
+        <div class="container">
+            <header>
+                <h4 class="line-divider">Регистрация на велопробег</h4>
+                <h1>Шаг №2</h1>
+                <h2>Выбор звена</h2>
+                <div class="row">
+                    <div class="span8 offset2">
+                        <p>
+                            Здесь вы можете зарегистрироваться и зарегистрировать своих друзей на 9-ый велопробег Дорога Минина.
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+
+
+
+            <article>
+                <div class="row-fluid">
+                    <!-- Contact form -->
+                    <div class="span6">
+                        <h5>Зарегистрироваться</h5>
+
+
+<p id="notice"><%= notice %></p>
+
+
+
+
+
+    	<%= render 'form' %>
+
+
+
+
+                    </div>
+
+
+
+
+                    <!-- End Contact form -->
+                    <!-- Contact information -->
+                    <div class="span5 offset1">
+                        <h5>Сводобные звенья</h5>
+
+                            <div class="row">
+                                <div class="span6">
+                                    Номер звена
+                                </div>
+                                <div class="span6">
+                                    Количество свободных мест
+                                </div>
+                            </div>
+
+                            <% Zveno.all.each do |zveno| %>
+                                <div class="row">
+                                    <div class="span6">
+                                        <%= zveno.number %>
+                                    </div>
+                                    <div class="span6">
+                                        <%= zveno.free %>
+                                    </div>
+                                </div>
+                            <% end %>
+
+                        <br/>
+                        <br/>
+                        <br/>
+                        <h5>Социальные вкладки</h5>
+                        <div class="social-icons sicon-white bordered">
+                            <a href="#" class="sicon-facebook"><i>Facebook</i></a>
+                            <a href="#" class="sicon-twitter"><i>Twitter</i></a>
+                            <a href="#" class="sicon-linkedin"><i>LinkedIn</i></a>
+                            <a href="#" class="sicon-youtube"><i>Youtube</i></a>
+                            <a href="#" class="sicon-pinterest"><i>Pinterest</i></a>
+                        </div>
+                    </div>
+                    <!-- End Contact information -->
+                </div>
+            </article>
+            <!-- End Article -->
+            <br><br><br><br><br>
+        </div>
+        
+        <!-- Background map image -->
+        <div id="map-image">
+            <img src="/images/map_bck.jpg" alt="Treble">
+        </div>
+
+

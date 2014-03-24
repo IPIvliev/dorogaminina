@@ -1,0 +1,49 @@
+<%= form_for @user, :html => { :class => "form-inline", :role => "form" } do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="span1">
+
+    <%= f.text_field :name %>
+    </div>
+    <div class="span1">
+
+    <%= f.text_field :lastname %>
+    </div>
+    <div class="span1">
+
+    <%= f.text_field :otchestvo %>
+    </div>
+    <div class="span2">
+
+    <%= f.text_field :phone %>
+    </div>
+    <div class="span2">
+
+    <%= f.collection_select(:zveno_id, Zveno.where("free > ?", 0), :number, :number, {}, {:class=>'my-custom-class'}) %>
+    </div>
+    <div class="span2">
+
+    <%= f.select(:size, [['S', 'S'], ['M', 'M'], ['L', 'L'], ['XL', 'XL'], ['XXL', 'XXL']]) %>
+    </div>
+    </div>
+  <div class="actions">
+
+  </div>
+
+<% end %>
+    <%= payment_service_for @user.id, "articlesale",
+                          :amount => 300,
+                          :service => :robokassa,
+                          :secret => "Odergies52" do |s| %>
+    <%= submit_tag "Оплатить" %>
+  <% end %>

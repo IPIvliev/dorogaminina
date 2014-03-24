@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  number: 1
+  user_id: 1
+  free: 1
+  occupy: 1
+
+two:
+  number: 1
+  user_id: 1
+  free: 1
+  occupy: 1

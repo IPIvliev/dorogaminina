@@ -1,0 +1,21 @@
+    <div class="span6">
+        <h5>Зарегистрироваться</h5>
+
+        <%= form_for User.new do |f| %>
+
+                        <%= f.text_field :lastname, :class => "span3", :placeholder => "Фамилие", :required => "required" %>
+                        <%= f.text_field :name, :class => "span3", :placeholder => "Имя", :required => "required" %>
+                        <%= f.text_field :otchestvo, :class => "span3", :placeholder => "Отчество", :required => "required" %>
+                        <%= f.text_field :phone, :class => "span3", :placeholder => "Телефон", :required => "required" %>
+
+
+
+            <%= f.submit "Зарегистрироваться", :class => "btn btn-primary" %>
+        <% end %>
+    </div>
+
+
+
+
+
+

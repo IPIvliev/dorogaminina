@@ -82,22 +82,11 @@
             <!-- Start Article -->
             <article>
                 <div class="row-fluid">
+
                     <!-- Contact form -->
-                    <div class="span6">
-                        <h5>Зарегистрироваться</h5>
-                        <form>
-                            <div id="parentId">
-                                <input type="text" class="span3" placeholder="Фамилие" required="required">
-                                <input type="text" class="span3" placeholder="Имя" required="required">
-                                <input type="text" class="span3" placeholder="Отчество" required="required">
-                                <input type="text" class="span3" placeholder="Сотовый телефон" required="required">
-                                <a onclick="return deleteField(this)" href="#">[X]</a>
-                            </div>
-                            <p><strong><span class="red"><a onclick="return addField()" href="#">+</span> зарегистрировать ещё одного участника</a></strong></p>
-                            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
-                        </form>
-                    </div>
+                        <%= render "shared/register" %>
                     <!-- End Contact form -->
+
                     <!-- Contact information -->
                     <div class="span5 offset1">
                         <h5>Контакты организаторов</h5>
@@ -412,6 +401,3 @@
         </div>
     </div>
     <!-- END PAGE | CLIENTS -->
-    
-
-

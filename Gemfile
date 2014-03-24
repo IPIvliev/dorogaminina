@@ -18,6 +18,12 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
 
+# Money
+gem 'activemerchant', :require => 'active_merchant'
+
+# Add dinamic fields
+gem "nested_form"
+
 # Blog
 gem 'ckeditor'
 

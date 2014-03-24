@@ -1,0 +1,18 @@
+<!--    <div class="span6">
+        <h5>Зарегистрироваться</h5>
+
+        <%= nested_form_for Request.new do |f| %>
+                <%= f.fields_for :users do |task_form| %>
+                        <%= task_form.text_field :lastname, :class => "span3", :placeholder => "Фамилие", :required => "required" %>
+                        <%= task_form.text_field :name, :class => "span3", :placeholder => "Имя", :required => "required" %>
+                        <%= task_form.text_field :otchestvo, :class => "span3", :placeholder => "Отчество", :required => "required" %>
+                        <%= task_form.text_field :phone, :class => "span3", :placeholder => "Телефон", :required => "required" %>
+                        <%= task_form.link_to_remove "[X]" %>
+                <% end %>
+            <p><strong><span class="red"><%= f.link_to_add "+ зарегистрировать ещё одного участника", :users, :class => "red" %></strong></p>
+            <%= f.submit "Зарегистрироваться", :class => "btn btn-primary" %>
+        <% end %>
+    </div>
+    <%= javascript_include_tag :defaults, "nested_form" %>
+
+    -->
