@@ -38,12 +38,8 @@
     </div>
   <div class="actions">
 
+
+<%= f.submit "Сохранить" %>
   </div>
 
 <% end %>
-    <%= payment_service_for @user.id, "articlesale",
-                          :amount => 300,
-                          :service => :robokassa,
-                          :secret => "Odergies52" do |s| %>
-    <%= submit_tag "Оплатить" %>
-  <% end %>

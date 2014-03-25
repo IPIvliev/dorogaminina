@@ -1,6 +1,8 @@
 Dorogaminina::Application.routes.draw do
 
 
+  devise_for :users, :controllers => { :registrations => "registrations" }
+
   resources :users
 
 
@@ -14,6 +16,6 @@ Dorogaminina::Application.routes.draw do
   match "/index.html", :to => "static_pages#index"
 
 # Корневая страница
- root :to => 'static_pages#index'
+ root :to => "static_pages#index"
 
 end

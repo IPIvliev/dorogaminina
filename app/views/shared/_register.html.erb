@@ -1,4 +1,4 @@
-    <div class="span6">
+  <div class="span6">
         <h5>Зарегистрироваться</h5>
 
         <%= form_for User.new do |f| %>
@@ -8,11 +8,40 @@
                         <%= f.text_field :otchestvo, :class => "span3", :placeholder => "Отчество", :required => "required" %>
                         <%= f.text_field :phone, :class => "span3", :placeholder => "Телефон", :required => "required" %>
 
-
+<% password_length = 6 %>
+<% password = Devise.friendly_token.first(password_length) %>
+<%= password %>
+                        <%= f.hidden_field :password, :value => password %>
+                        <%= f.hidden_field :more, :value => password %>
+                        <%= f.hidden_field :password_confirmation, :value => password %>
 
             <%= f.submit "Зарегистрироваться", :class => "btn btn-primary" %>
         <% end %>
+
+
+        <h5>Уже зарегистрировались? Заходите!</h5>
+
+        <%= form_for("user", :url => user_session_path) do |f| %>
+
+                        <%= f.text_field :id, :class => "span3", :placeholder => "Ваш ID", :required => "required" %>
+                       
+                        <%= f.password_field :password, :class => "span3", :placeholder => "Пароль", :required => "required" %>
+                    <div class="checkbox">
+                      <label> Запомнить меня
+                        <%= f.check_box :remember_me %>
+                      </label>
+                    </div>
+
+            <%= f.submit "Вход", :class => "btn btn-primary" %>
+        <% end %>
     </div>
+
+<%= link_to('Logout', destroy_user_session_path, :method => :delete) if current_user %>
+
+
+
+
+
 
 
 
