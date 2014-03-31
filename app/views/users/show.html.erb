@@ -115,10 +115,10 @@
             <%= @user.size %>
         </div>
     </div>
-    <%= payment_service_for @user.id, "articlesale",
+    <%= payment_service_for @user.id, "dorogaminina",
                           :amount => 300,
                           :service => :robokassa,
-                          :secret => "Odergies52" do |s| %>
+                          :secret => "OdergiesFNK" do |s| %>
     <%= submit_tag "Внести взнос" %>
   <% end %>
 
