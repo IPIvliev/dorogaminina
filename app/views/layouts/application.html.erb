@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <meta name="keywords" content="создание сайтов, разработка сайтов, создать сайт, изготовить сайт, заказ сайта, заказать сайт, сделать сайт, продвижение сайтов, раскрутка сайта, цена сайта, интернет сайт, создание сайтов в Нижнем Новгороде" />
-  <meta name="description" content="Мы занимаемся созданием сайтов и продвижением сайтов в Нижнем Новгороде" />
-
-</head>
-<body>
-
-	<%= render 'static_pages/header' %>
-	<%= yield %>
-	<%= render 'static_pages/footer' %>
-
-</body>
+	<head>
+		<title><%= full_title(yield(:title)) %></title>
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+		<meta name="keywords" content="велопробег, Дорога Минина, Нижний Новгород, велотуризм, велосипед, Балахна, массовые мероприятия, Шанцев, День народного единства, 4 ноября" />
+		<meta name="description" content="XI Открытый велопробег Дорога Минина" />
+	</head>
+	<body>
+		<%= render 'static_pages/header' %>
+		<%= yield %>
+		<%= render 'static_pages/footer' %>
+	</body>
 </html>

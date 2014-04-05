@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :lastname, :name, :otchestvo, :phone, :request_id, :zveno_id, :size, :more
 
+  validates :phone, presence: true, numericality: { only_integer: true, message: "only allows letters" }
+
   belongs_to :zveno
 
   def email_required?
@@ -15,7 +17,7 @@ class User < ActiveRecord::Base
 	end
 
 	def email_changed?
-  false
+    false
   end
 
   def approve!

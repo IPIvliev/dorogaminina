@@ -25,11 +25,6 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @user }
-    end
   end
 
   # GET /users/1/edit
@@ -47,8 +42,7 @@ class UsersController < ApplicationController
         format.html { redirect_to edit_user_path(@user), notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
-        format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.html { redirect_to root_path, notice: 'User was successfully updated.' }
       end
     end
   end
