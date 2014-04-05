@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :zveno_id
       t.integer :request_id
       t.string :size
+      t.integer :paid,        :default => 0
 
       t.timestamps
     end

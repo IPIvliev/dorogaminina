@@ -10,7 +10,7 @@ class RobokassaController < ApplicationController
   # Robokassa call this action after transaction
   def paid
     if @notification.acknowledge # check if it’s genuine Robokassa request
-      @payment.approve! # project-specific code
+      @user.approve! # project-specific code
       render :text => @notification.success_response
     else
       head :bad_request
@@ -19,15 +19,15 @@ class RobokassaController < ApplicationController
 
   # Robokassa redirect user to this action if it’s all ok
   def success
-    if !@payment.approved? && @notification.acknowledge
-      @payment.approve!
+    if !@user.approved? && @notification.acknowledge
+      @user.approve!
     end
 
-    redirect_to @payment, :notice => I18n.t("notice.robokassa.success")
+    redirect_to @user, :notice => I18n.t("notice.robokassa.success")
   end
   # Robokassa redirect user to this action if it’s not
   def fail
-    redirect_to @payment, :notice => I18n.t("notice.robokassa.fail")
+    redirect_to @user, :notice => I18n.t("notice.robokassa.fail")
   end
 
   private
@@ -37,6 +37,6 @@ class RobokassaController < ApplicationController
   end
 
   def find_payment
-    @payment = User.find(@notification.item_id)
+    @user = User.find(@notification.item_id)
   end
 end
