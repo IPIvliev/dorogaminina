@@ -15,7 +15,7 @@ class RobokassaController < ApplicationController
       #@user.approve! # project-specific code
       render :text => @notification.success_response
     #else
-     # head :bad_request
+     #head :bad_request
     #end
   end
 
