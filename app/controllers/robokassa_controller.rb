@@ -13,7 +13,7 @@ class RobokassaController < ApplicationController
   def paid
     if @notification.acknowledge # check if it’s genuine Robokassa request
       @user.approve! # project-specific code
-      render :text => @notification.success_response
+      render :text => "OK#{@user.id}"
     else
       head :bad_request
     end
