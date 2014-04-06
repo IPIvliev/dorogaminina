@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class RobokassaController < ApplicationController
 
   include ActiveMerchant::Billing::Integrations
