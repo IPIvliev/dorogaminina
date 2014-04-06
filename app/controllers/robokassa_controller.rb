@@ -12,8 +12,8 @@ class RobokassaController < ApplicationController
   # Robokassa call this action after transaction
   def paid
     if @notification.acknowledge # check if it’s genuine Robokassa request
-      @user.approve! # project-specific code
-      render :text => "OK#{@user.id}"
+      #@user.approve! # project-specific code
+      render :text => @notification.success_response
     else
       head :bad_request
     end
@@ -25,7 +25,7 @@ class RobokassaController < ApplicationController
       @user.approve!
     end
 
-    redirect_to @user, :notice => I18n.t("notice.robokassa.success")
+    redirect_to @user, :notice => "Ваш взнос успешно принят!"
   end
   # Robokassa redirect user to this action if it’s not
   def fail
