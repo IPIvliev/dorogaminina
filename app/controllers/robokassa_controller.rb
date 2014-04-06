@@ -25,7 +25,7 @@ class RobokassaController < ApplicationController
       @user.approve!
     end
 
-    redirect_to @user, :notice => "Ваш взнос успешно принят!"
+    redirect_to @user, :notice => "Ваш взнос успешно принят! - #{@notification}, - #{@notification.acknowledge}"
   end
   # Robokassa redirect user to this action if it’s not
   def fail
