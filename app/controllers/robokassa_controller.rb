@@ -4,7 +4,7 @@ class RobokassaController < ApplicationController
 
   include ActiveMerchant::Billing::Integrations
 
-  #skip_before_filter :verify_authenticity_token # skip before filter if you chosen POST request for callbacks
+  skip_before_filter :verify_authenticity_token # skip before filter if you chosen POST request for callbacks
 
   before_filter :create_notification
   before_filter :find_payment
