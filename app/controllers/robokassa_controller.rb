@@ -27,7 +27,7 @@ class RobokassaController < ApplicationController
   end
   # Robokassa redirect user to this action if it’s not
   def fail
-    redirect_to @user, :notice => I18n.t("notice.robokassa.fail")
+    redirect_to @user, :notice => "Оплата не удалась!"
   end
 
   private
