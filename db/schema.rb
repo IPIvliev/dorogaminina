@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20140325092049) do
     t.integer  "request_id"
     t.string   "size"
     t.integer  "paid",                   :default => 0
+    t.integer  "role",                   :default => 0
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "phone",                  :default => "", :null => false

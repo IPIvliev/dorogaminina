@@ -18,11 +18,11 @@ gem 'devise'
 # Money
 gem 'activemerchant', :require => 'active_merchant'
 
-# Add dinamic fields
-gem "nested_form"
-
 # Blog
 gem 'ckeditor'
+
+# Work with API
+gem  'rest-client'
 
 # Images
 gem 'carrierwave'

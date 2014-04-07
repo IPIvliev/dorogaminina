@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
@@ -37,12 +39,19 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
 
+    RestClient.post("http://sms.ru/sms/send", :api_id => "9d3359eb-9224-2384-5d06-1118975a2cd2", :to => "79051916188", :text => "Ваш ID на велопробег #{@user.id}")
+
     respond_to do |format|
       if @user.save
+
+        
+
         format.html { redirect_to edit_user_path(@user), notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
-        format.html { redirect_to root_path, notice: 'User was successfully updated.' }
+        format.html { redirect_to root_path,
+        notice: 'Поздравляем! Вы подали заявку на регистрацию. Для подтверждения регистрации 
+        необходимо внести взнос в размере 300 рублей.' }
       end
     end
   end
@@ -59,7 +68,12 @@ class UsersController < ApplicationController
         newoccupy = @user.zveno.occupy + 1
 
         @user.zveno.update_attributes(:free => newfree, :occupy => newoccupy)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+
+        RestClient.post("http://sms.ru/sms/send", :api_id => "9d3359eb-9224-2384-5d06-1118975a2cd2", :to => @user.phone, :text => "Ваш ID на велопробег #{@user.id}, пароль #{@user.more}")
+
+        format.html { redirect_to @user,
+        notice: 'Поздравляем! Вы подали заявку на регистрацию. Для подтверждения регистрации 
+        необходимо внести взнос в размере 300 рублей.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

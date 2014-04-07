@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :request_id
       t.string :size
       t.integer :paid,        :default => 0
+      t.integer :role,        :default => 0
 
       t.timestamps
     end
