@@ -2,11 +2,9 @@ Dorogaminina::Application.routes.draw do
 
   devise_for :users, :controllers => { :registrations => "registrations" }
 
-scope "/admin" do
-  resources :users
-end
 
-match "/users/:id", :to => "users#show"
+  resources :users
+
 
   resources :zvenos
 
