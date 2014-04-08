@@ -1,10 +1,12 @@
 Dorogaminina::Application.routes.draw do
 
-
   devise_for :users, :controllers => { :registrations => "registrations" }
 
+scope "/admin" do
   resources :users
+end
 
+match "/users/:id", :to => "users#show"
 
   resources :zvenos
 
@@ -19,6 +21,9 @@ Dorogaminina::Application.routes.draw do
 # Статические страницы
   get "static_pages/index"
   match "/index.html", :to => "static_pages#index"
+
+# Служебный раздел
+  match "/statistics.html", :to => "static_pages#statistics"
 
 # Корневая страница
  root :to => "static_pages#index"

@@ -1,33 +1,126 @@
-<h1>Listing users</h1>
+   <!-- NAVIGATION -->
+    <nav class="fixed-top1" id="navigation">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span12 center">
+                    <!-- LOGO -->
+                    <a class="brand pull-left" href="./">
+                        <img src="assets/images/logo.png" alt="Treble">
+                    </a>
+                    <!-- END LOGO -->
 
-<table>
+                    <!-- MOBILE MENU BUTTON -->
+                    <div class="mobile-menu" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </div>
+                    <!-- END MOBILE MENU BUTTON -->
+                    
+                    <!-- MAIN MENU -->
+                    <ul id="main-menu" class="nav-collapse collapse">
+                        <li><a href="/index.html#page-welcome">Информация</a></li>
+                        <li><a href="/index.html#page-work">Регистрация</a></li>
+                        <li><a href="/index.html#page-features">Историческая справка</a></li>
+                        <li><a href="/index.html#page-about">Галерея</a></li>
+                    </ul>
+                    <!-- END MAIN MENU -->
+                    
+                    <!-- SOCIAL ICONS -->
+                    <div class="social-icons hover-big pull-right">
+                        <a href="#" class="sicon-facebook"><i>Facebook</i></a>
+                        <a href="#" class="sicon-twitter"><i>Twitter</i></a>
+                        <a href="#" class="sicon-linkedin"><i>LinkedIn</i></a>
+                        <a href="#" class="sicon-youtube"><i>Youtube</i></a>
+                        <a href="#" class="sicon-pinterest"><i>Pinterest</i></a>
+                    </div>
+                    <!-- END SOCIAL ICONS -->
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- END NAVIGATION -->
+
+    <div class="pages black-bg white page-contact" id="page-contact">
+        <div class="container">
+            <header>
+                <h4 class="line-divider">Личный кабинет</h4>
+                <h1>Здравствуйте,</h1>
+                <h2><%= current_user.name %></h2>
+                <div class="row">
+                    <div class="span8 offset2">
+                        <p>
+                            Здесь вы можете познакомиться с последники новостями велопробега, а также узнать статус взноса.
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+
+
+
+            <article>
+                <div class="row-fluid">
+                    <!-- Contact form -->
+                    <div class="span6">
+                        <strong><%= link_to 'Новый участник', new_user_path %></strong>
+                        <br><br>
+<table class="table table-bordered">
   <tr>
-    <th>Name</th>
-    <th>Lastname</th>
-    <th>Otchestvo</th>
-    <th>Zveno</th>
-    <th>Phone</th>
-    <th>Request</th>
-    <th></th>
+    <th>ID</th>
+    <th>Фамилия</th>
+    <th>Имя</th>
+    <th>Отчество</th>
+    <th>Телефон</th>
+    <th>Футболка</th>
+    <th>Оплата</th>
     <th></th>
     <th></th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.name %></td>
+    <td><%= link_to user.id, user %></td>
     <td><%= user.lastname %></td>
+    <td><%= user.name %></td>
     <td><%= user.otchestvo %></td>
-    <td><%= user.zveno_id %></td>
     <td><%= user.phone %></td>
-    <td><%= user.request_id %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= user.size %></td>
+    <td><%= user.zveno_id %></td>
+    <td><%= link_to 'Изменить', edit_user_path(user) %></td>
+    <td><%= link_to 'Удалить', user, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'Новый участник', new_user_path %>
+
+                    </div>
+
+                    <!-- End Contact form -->
+                    <!-- Contact information -->
+                    <div class="span5 offset1">
+
+                        <h5>Добро пожаловать</h5>
+                        <p>Мы рады приветствовать Вас тут.</p>
+
+<%= render "/shared/servicemenu" %>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <h5>Социальные вкладки</h5>
+                            <%= render "/shared/social" %>
+                    </div>
+                    <!-- End Contact information -->
+                </div>
+            </article>
+            <!-- End Article -->
+            <br><br><br><br><br>
+        </div>
+        
+        <!-- Background map image -->
+        <div id="map-image">
+            <img src="/images/map_bck.jpg" alt="Treble">
+        </div>

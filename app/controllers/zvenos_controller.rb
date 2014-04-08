@@ -44,7 +44,7 @@ class ZvenosController < ApplicationController
 
     respond_to do |format|
       if @zveno.save
-        format.html { redirect_to @zveno, notice: 'Zveno was successfully created.' }
+        format.html { redirect_to zvenos_path, notice: 'Zveno was successfully created.' }
         format.json { render json: @zveno, status: :created, location: @zveno }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class ZvenosController < ApplicationController
 
     respond_to do |format|
       if @zveno.update_attributes(params[:zveno])
-        format.html { redirect_to @zveno, notice: 'Zveno was successfully updated.' }
+        format.html { redirect_to zvenos_path, notice: 'Zveno was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

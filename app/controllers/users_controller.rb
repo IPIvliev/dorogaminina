@@ -46,7 +46,7 @@ class UsersController < ApplicationController
 
         
 
-        format.html { redirect_to edit_user_path(@user), notice: 'User was successfully created.' }
+        format.html { redirect_to edit_user_path(@user), notice: 'Участник успешно создан!' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { redirect_to root_path,

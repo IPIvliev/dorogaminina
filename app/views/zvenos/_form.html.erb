@@ -12,22 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :number %><br />
+    <%= f.label "Номер звена" %><br />
     <%= f.number_field :number %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :free %><br />
+    <%= f.label "Свободно" %><br />
     <%= f.number_field :free %>
   </div>
   <div class="field">
-    <%= f.label :occupy %><br />
+    <%= f.label "Занято" %><br />
     <%= f.number_field :occupy %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :value => "Сохранить" %>
   </div>
 <% end %>

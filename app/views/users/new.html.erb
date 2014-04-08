@@ -1,5 +1,149 @@
-<h1>New user</h1>
+   <!-- NAVIGATION -->
+    <nav class="fixed-top1" id="navigation">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span12 center">
+                    <!-- LOGO -->
+                    <a class="brand pull-left" href="./">
+                        <img src="assets/images/logo.png" alt="Treble">
+                    </a>
+                    <!-- END LOGO -->
 
-<%= render 'form' %>
+                    <!-- MOBILE MENU BUTTON -->
+                    <div class="mobile-menu" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </div>
+                    <!-- END MOBILE MENU BUTTON -->
+                    
+                    <!-- MAIN MENU -->
+                    <ul id="main-menu" class="nav-collapse collapse">
+                        <li><a href="/index.html#page-welcome">Информация</a></li>
+                        <li><a href="/index.html#page-work">Регистрация</a></li>
+                        <li><a href="/index.html#page-features">Историческая справка</a></li>
+                        <li><a href="/index.html#page-about">Галерея</a></li>
+                    </ul>
+                    <!-- END MAIN MENU -->
+                    
+                    <!-- SOCIAL ICONS -->
+                    <div class="social-icons hover-big pull-right">
+                        <a href="#" class="sicon-facebook"><i>Facebook</i></a>
+                        <a href="#" class="sicon-twitter"><i>Twitter</i></a>
+                        <a href="#" class="sicon-linkedin"><i>LinkedIn</i></a>
+                        <a href="#" class="sicon-youtube"><i>Youtube</i></a>
+                        <a href="#" class="sicon-pinterest"><i>Pinterest</i></a>
+                    </div>
+                    <!-- END SOCIAL ICONS -->
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- END NAVIGATION -->
 
-<%= link_to 'Back', users_path %>
+    <div class="pages black-bg white page-contact" id="page-contact">
+        <div class="container">
+            <header>
+                <h4 class="line-divider">Личный кабинет</h4>
+                <h1>Здравствуйте,</h1>
+                <h2><%= current_user.name %></h2>
+                <div class="row">
+                    <div class="span8 offset2">
+                        <p>
+                            Здесь вы можете познакомиться с последники новостями велопробега, а также узнать статус взноса.
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+
+
+
+            <article>
+                <div class="row-fluid">
+                    <!-- Contact form -->
+                    <div class="span6">
+
+<h5>Служебная регистрация нового участника велопробега</h5>
+
+
+
+
+
+
+
+<%= form_for @user do |f| %>
+                
+    <%= f.text_field :lastname, :class => "span4", :placeholder => "Фамилия", :required => "required" %>
+    <%= f.text_field :name, :class => "span4", :placeholder => "Имя", :required => "required" %>
+    <%= f.text_field :otchestvo, :class => "span4", :placeholder => "Отчество", :required => "required" %><br><br>
+    <lable>Ваш телефон:</lable>
+    <%= f.text_field :phone, :class => "span12", :placeholder => "Телефон", :required => "required", :id => "phone" %>
+    <br><br>
+    <lable>Укажите звено, в котором вы хотите поехать:</lable>
+    <%= f.collection_select(:zveno_id, Zveno.where("free > ?", 0), :number, :number, {}, {:class=>'span12 my-custom-class'}) %>
+
+    <br><br>
+    <lable>Укажите размер футболки:</lable>
+    <%= f.select(:size, [['S', 'S'], ['M', 'M'], ['L', 'L'], ['XL', 'XL'], ['XXL', 'XXL']], {}, { :class => 'span12' }) %>
+
+            <% password_length = 4 %>
+        <% password = Devise.friendly_token.first(password_length) %>
+
+                        <%= f.hidden_field :password, :value => password %>
+                        <%= f.hidden_field :more, :value => password %>
+                        <%= f.hidden_field :password_confirmation, :value => password %>
+
+<br><br>
+<%= f.submit "Сохранить", :class => "btn" %>
+
+
+<% end %>
+
+
+<script type="text/javascript">
+    jQuery(function($){
+       $("#phone").mask("+7 (999) 999-99-99");
+    });
+</script>
+<script src="/js/jquery.maskedinput.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<%= link_to 'Назад', users_path %>
+
+
+
+
+                    </div>
+
+                    <!-- End Contact form -->
+                    <!-- Contact information -->
+                    <div class="span5 offset1">
+
+                        <h5>Добро пожаловать</h5>
+                        <p>Мы рады приветствовать Вас тут.</p>
+
+<%= render "/shared/servicemenu" %>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <h5>Социальные вкладки</h5>
+                            <%= render "/shared/social" %>
+                    </div>
+                    <!-- End Contact information -->
+                </div>
+            </article>
+            <!-- End Article -->
+            <br><br><br><br><br>
+        </div>
+        
+        <!-- Background map image -->
+        <div id="map-image">
+            <img src="/images/map_bck.jpg" alt="Treble">
+        </div>
