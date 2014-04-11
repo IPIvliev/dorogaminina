@@ -69,7 +69,7 @@
 <p id="notice"><%= notice %></p>
 
 
-<strong>Ваш пароль от личного кабинета:</strong> <span class="yellow"><%= @user.more %></span>
+<strong>Ваш пароль от личного кабинета:</strong> <span class="yellow"><%= current_user.more %></span>
 <br><br>
 <strong>Статус взноса:</strong> <%= vznosstatus(current_user.paid) %>
 <br><br>
@@ -102,7 +102,7 @@
 </table>
 
 <% if current_user.paid == 0 %>
-    <%= payment_service_for @user.id, "dorogaminina",
+    <%= payment_service_for current_user.id, "dorogaminina",
                           :amount => 3,
                           :service => :robokassa,
                           :secret => "OdergiesFNK1" do |s| %>
