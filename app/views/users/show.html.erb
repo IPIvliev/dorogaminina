@@ -4,8 +4,8 @@
             <div class="row-fluid">
                 <div class="span12 center">
                     <!-- LOGO -->
-                    <a class="brand pull-left" href="./">
-                        <img src="assets/images/logo.png" alt="Treble">
+                    <a class="brand pull-left" href="/index.html">
+                        IX Открытый велопробег "Дорога Минина"
                     </a>
                     <!-- END LOGO -->
 
@@ -20,9 +20,10 @@
                     <!-- MAIN MENU -->
                     <ul id="main-menu" class="nav-collapse collapse">
                         <li><a href="/index.html#page-welcome">Информация</a></li>
-                        <li><a href="/index.html#page-work">Регистрация</a></li>
-                        <li><a href="/index.html#page-features">Историческая справка</a></li>
-                        <li><a href="/index.html#page-about">Галерея</a></li>
+                        <li><a href="/index.html#page-registration">Регистрация</a></li>
+                        <li><a href="/index.html#page-history">Справка</a></li>
+                        <li><a href="/index.html#page-gallery">Галерея</a></li>
+                        <li><a href="/index.html#page-clients">Партнёры</a></li>
                     </ul>
                     <!-- END MAIN MENU -->
                     
@@ -103,7 +104,7 @@
 
 <% if current_user.paid == 0 %>
     <%= payment_service_for current_user.id, "dorogaminina",
-                          :amount => 3,
+                          :amount => 300,
                           :service => :robokassa,
                           :secret => "OdergiesFNK1" do |s| %>
     <%= submit_tag "Внести взнос", :class => "btn" %>
