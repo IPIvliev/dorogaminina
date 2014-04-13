@@ -41,7 +41,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
 
-    # RestClient.post("http://sms.ru/sms/send", :api_id => "9d3359eb-9224-2384-5d06-1118975a2cd2", :to => "79051916188", :text => "Ваш ID на велопробег #{@user.id}")
+    RestClient.post("http://sms.ru/sms/send", :api_id => "9d3359eb-9224-2384-5d06-1118975a2cd2", :to => "79051916188", :text => "Ваш ID на велопробег #{@user.id}")
 
     respond_to do |format|
       if @user.save
