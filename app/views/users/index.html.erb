@@ -65,14 +65,28 @@
                     <div class="span6">
                         <strong><%= link_to 'Новый участник', new_user_path %></strong>
                         <br><br>
+<%= form_tag users_path, :method => 'get' do %>  
+  <%= hidden_field_tag :direction, params[:direction] %>  
+  <%= hidden_field_tag :sort, params[:sort] %>  
+
+    <%= text_field_tag :search, params[:search], :placeholder => "Фамилия", :class => "span4"  %>  
+    <%= submit_tag "Поиск", :name => nil, :class => "btn span2" %>  
+ 
+<% end %>  
+
+              
+
+              
+
+        <br><br>
 <table class="table table-bordered">
   <tr>
-    <th>ID</th>
-    <th>Фамилия</th>
-    <th>Имя</th>
-    <th>Отчество</th>
+    <th><%= sortable "id", "ID" %></th>
+    <th><%= sortable "lastname", "Фамилия" %></th>
+    <th><%= sortable "name", "Имя" %></th>
+    <th><%= sortable "otchestvo", "Отчество" %></th>
     <th>Телефон</th>
-    <th>Футболка</th>
+    <th><%= sortable "size", "Футболка" %></th>
     <th>Звено</th>
     <th></th>
     <th></th>
@@ -86,7 +100,7 @@
     <td><%= user.otchestvo %></td>
     <td><%= user.phone %></td>
     <td><%= user.size %></td>
-    <td><%= user.zveno_id %></td>
+    <td><%= link_to user.zveno_id, user.zveno %></td>
     <td><%= link_to 'Изменить', edit_user_path(user) %></td>
     <td><%= link_to 'Удалить', user, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
   </tr>

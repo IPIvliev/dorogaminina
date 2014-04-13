@@ -56,7 +56,7 @@
                 <div class="row">
                     <div class="span8 offset2">
                         <p>
-                            Здесь вы можете зарегистрироваться и зарегистрировать своих друзей на 9-ый велопробег Дорога Минина.
+                            Укажите номер звена и размер футболки.
                         </p>
                     </div>
                 </div>
@@ -83,22 +83,17 @@
                     <div class="span5 offset1">
                         <h5>Сводобные звенья</h5>
 
-                            <div class="row">
-                                <div class="span6">
-                                    Номер звена
-                                </div>
-                                <div class="span6">
-                                    Количество свободных мест
-                                </div>
-                            </div>
 
                             <% Zveno.all.each do |zveno| %>
                                 <div class="row">
-                                    <div class="span6">
-                                        <%= zveno.number %>
+                                    <div class="span2">
+                                        <%= "Звено №#{zveno.number}" %>
                                     </div>
                                     <div class="span6">
-                                        <%= zveno.free %>
+                                        <%= progress_bar(zveno.use, :color => 'orange', :rounded => true, :tiny => true) %> 
+                                    </div>
+                                    <div class="span4">
+                                        <%= "Свободно #{zveno.free} #{Russian.pluralize(zveno.free, 'место', 'места', 'мест')}" %>
                                     </div>
                                 </div>
                             <% end %>

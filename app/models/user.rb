@@ -26,4 +26,12 @@ class User < ActiveRecord::Base
   def approve!
     update_attribute(:paid, 2)
   end
+
+  def self.search(search)  
+    if search  
+      where('lastname LIKE ?', "%#{search}%")  
+    else  
+      scoped  
+    end  
+  end  
 end

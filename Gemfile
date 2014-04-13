@@ -8,12 +8,16 @@ gem 'bootstrap-will_paginate', '0.0.6'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'mysql2'
 gem "breadcrumbs_on_rails"
 gem 'russian'
 gem 'thin'
 
 # Users
 gem 'devise'
+
+# Design
+gem 'css3-progress-bar-rails'
 
 # Money
 gem 'activemerchant', :require => 'active_merchant'
