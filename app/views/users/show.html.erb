@@ -70,9 +70,9 @@
 <p id="notice"><%= notice %></p>
 
 
-<strong>Ваш пароль от личного кабинета:</strong> <span class="yellow"><%= current_user.more %></span>
+<strong>Ваш пароль от личного кабинета:</strong> <span class="yellow"><%= @user.more %></span>
 <br><br>
-<strong>Статус взноса:</strong> <%= vznosstatus(current_user.paid) %>
+<strong>Статус взноса:</strong> <%= vznosstatus(@user.paid) %>
 <br><br>
 
 <table class="table table-bordered">
@@ -91,18 +91,18 @@
 
      <tbody>
         <tr>
-          <td><%= current_user.id %></td>
-          <td><%= current_user.lastname %> </td>
-          <td><%= current_user.name %></td>
-          <td><%= current_user.otchestvo %></td>
-          <td><%= current_user.phone %></td>
-          <td><%= current_user.zveno.number if @user.zveno %></td>
-          <td><%= current_user.size %></td>
+          <td><%= @user.id %></td>
+          <td><%= @user.lastname %> </td>
+          <td><%= @user.name %></td>
+          <td><%= @user.otchestvo %></td>
+          <td><%= @user.phone %></td>
+          <td><%= @user.zveno.number if @user.zveno %></td>
+          <td><%= @user.size %></td>
         </tr>
       </tbody>
 </table>
 
-<% if current_user.paid == 0 %>
+<% if @user == current_user && current_user.paid == 0 %>
     <%= payment_service_for current_user.id, "dorogaminina",
                           :amount => 300,
                           :service => :robokassa,
