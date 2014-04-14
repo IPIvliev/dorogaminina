@@ -89,6 +89,7 @@ GEM
     money (5.1.1)
       i18n (~> 0.6.0)
     multi_json (1.9.2)
+    mysql2 (0.3.15)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     nokogiri (1.6.1-x86-mingw32)
@@ -168,6 +169,7 @@ DEPENDENCIES
   css3-progress-bar-rails
   devise
   jquery-rails
+  mysql2
   rails (= 3.2.13)
   rest-client
   rmagick (= 2.13.2)
