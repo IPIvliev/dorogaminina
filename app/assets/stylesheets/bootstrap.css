@@ -53,7 +53,7 @@ color: red;
  .page-welcome #welcome-messages ul,.page-welcome #welcome-messages li{margin:0;padding:0}
  .page-welcome #welcome-messages.divider:after{margin:auto auto 14px;padding-bottom:5px}
  .page-welcome #welcome-messages+p{font-weight:bold;text-transform:uppercase;margin-top:10px;font-weight:800;letter-spacing:2px}
- .page-welcome .social-icons{margin:50px auto 0}
+ .page-welcome .social-icons{margin:30px auto 0}
  .page-welcome .centralized{z-index:2}
  .portfolio-items a{position:relative;display:block;color:#fff;overflow:hidden}
  .portfolio-items .portfolio-overlay{width:100%;height:100%;top:0;left:-100%;position:absolute;display:block;z-index:4;background:url(/images/thumb_over.png) no-repeat scroll center 42% #4e808e;background-size:auto 20%;opacity:0;filter:alpha(opacity=0);-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;-o-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
