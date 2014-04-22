@@ -104,7 +104,7 @@
 
 <% if @user == current_user && current_user.paid == 0 %>
     <%= payment_service_for current_user.id, "dorogaminina",
-                          :amount => 300,
+                          :amount => 200,
                           :service => :robokassa,
                           :secret => "OdergiesFNK1" do |s| %>
     <%= submit_tag "Внести взнос", :class => "btn" %>
