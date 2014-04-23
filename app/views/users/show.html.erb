@@ -77,6 +77,14 @@
 <strong>Статус взноса:</strong> <%= vznosstatus(@user.paid) %>
 <br><br>
 
+<% if current_user.paid == 0 %>
+<div class="bs-callout bs-callout-warning">
+    <h4>Внимание!</h4>
+    <p>Внесение взноса является обязательным условием участия в велопробеге. Сумма взноса составляет (<strong class="red">200 рублей</strong>).</p>
+    <p>Взнос можно внести Он-лайн, либо при личном визите в наш офис по адресу: г. Нижний Новгород, ул. Ильинская, д. 109</p>
+</div>
+<br><br>
+<% end %>
 <table class="table table-bordered">
       <thead>
         <tr>
