@@ -75,7 +75,7 @@ class UsersController < ApplicationController
 
         format.html { redirect_to @user,
         notice: 'Поздравляем! Вы подали заявку на регистрацию. Для подтверждения регистрации 
-        необходимо внести взнос в размере 300 рублей.' }
+        необходимо внести взнос в размере 200 рублей.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
