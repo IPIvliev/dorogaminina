@@ -77,7 +77,7 @@
 <strong>Статус взноса:</strong> <%= vznosstatus(@user.paid) %>
 <br><br>
 
-<% if current_user.paid == 0 %>
+<% if @user.paid == 0 %>
 <div class="bs-callout bs-callout-warning">
     <h4>Внимание!</h4>
     <p>Внесение взноса является обязательным условием участия в велопробеге. Сумма взноса составляет (<strong class="red">200 рублей</strong>).</p>
