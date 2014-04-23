@@ -20,6 +20,9 @@ Dorogaminina::Application.routes.draw do
   get "static_pages/index"
   match "/index.html", :to => "static_pages#index"
 
+# Все фотографии
+  match "/readmore.html", :to => "static_pages#readmore"
+
 # Служебный раздел
   match "/statistics.html", :to => "static_pages#statistics"
 
