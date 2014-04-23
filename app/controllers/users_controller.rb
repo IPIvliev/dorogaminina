@@ -53,7 +53,7 @@ class UsersController < ApplicationController
       else
         format.html { redirect_to root_path,
         notice: 'Поздравляем! Вы подали заявку на регистрацию. Для подтверждения регистрации 
-        необходимо внести взнос в размере 300 рублей.' }
+        необходимо внести взнос в размере 200 рублей.' }
       end
     end
   end
