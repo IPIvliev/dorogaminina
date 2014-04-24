@@ -60,6 +60,7 @@
 
 
             <article>
+                <% if current_user.role == 2 %>
                 <div class="row-fluid">
                     <!-- Contact form -->
                     <div class="span6">
@@ -129,6 +130,9 @@
                     </div>
                     <!-- End Contact information -->
                 </div>
+<% else %>
+    <p>У вас нет прав доступа в этот раздел сайта</p>
+<% end %>
             </article>
             <!-- End Article -->
             <br><br><br><br><br>

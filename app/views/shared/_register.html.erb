@@ -16,7 +16,7 @@
                         <%= f.hidden_field :more, :value => password %>
                         <%= f.hidden_field :password_confirmation, :value => password %>
 
-            <%= f.submit "Зарегистрироваться", :class => "btn btn-primary" %>
+            <%= f.submit "Зарегистрироваться", :class => "btn btn-primary", :disable_with => "Процесс регистрации..." %>
         <% end %>
 
 
