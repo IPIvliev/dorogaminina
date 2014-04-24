@@ -13,7 +13,7 @@
                 
 
     <lable>Укажите звено, в котором вы хотите поехать:</lable>
-    <%= f.collection_select(:zveno_id, Zveno.where("free > ?", 0), :number, :number, {}, {:class=>'span12 my-custom-class'}) %>
+    <%= f.collection_select(:zveno_id, Zveno.all, :number, :number, {}, {:class=>'span12 my-custom-class'}) %>
 
     <br><br>
     <lable>Укажите размер футболки:</lable>

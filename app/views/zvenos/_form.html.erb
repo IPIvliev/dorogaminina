@@ -16,12 +16,8 @@
     <%= f.number_field :number %>
   </div>
   <div class="field">
-    <%= f.label "Свободно" %><br />
-    <%= f.number_field :free %>
-  </div>
-  <div class="field">
-    <%= f.label "Занято" %><br />
-    <%= f.number_field :occupy %>
+    <%= f.label "Всего мест" %><br />
+    <%= f.number_field :all, :min => 1 %>
   </div>
   <div class="actions">
     <%= f.submit :value => "Сохранить" %>

@@ -1,11 +1,10 @@
 class Zveno < ActiveRecord::Base
-  attr_accessible :free, :number, :occupy, :user_id
+  attr_accessible :number, :all, :occupy
 
   has_many :users
 
   def use
-  	z = free + users.count
-  	percent = 100 / z
+  	percent = 100 / all
 
 	y = users.count * percent
   end

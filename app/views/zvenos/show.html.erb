@@ -64,9 +64,9 @@
                     <!-- Contact form -->
                     <div class="span6">
                     	<strong class="red">Звено №<%= @zveno.id %></strong><br><br>
-                    	<strong>Всего мест:</strong> <%= @zveno.free + @zveno.users.count %><br>
+                    	<strong>Всего мест:</strong> <%= @zveno.all %><br>
                     	<strong>Уже зарегистрировалось:</strong> <%= @zveno.users.count %><br>
-                    	<strong>Свободно мест:</strong> <%= @zveno.free %>
+                    	<strong>Свободно мест:</strong> <%= @zveno.all - @zveno.users.count %>
                         <br><br>
                         <%= link_to "Изменить звено", edit_zveno_path(@zveno) %><br><br>
 <table class="table table-bordered">

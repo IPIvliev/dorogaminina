@@ -67,10 +67,9 @@ before_filter :authenticate_user!
     respond_to do |format|
       if @user.update_attributes(params[:user])
 
-        newfree = @user.zveno.free - 1
-        newoccupy = @user.zveno.occupy + 1
+        newoccupy = @user.zveno.all - @user.zveno.users.count
 
-        @user.zveno.update_attributes(:free => newfree, :occupy => newoccupy)
+        @user.zveno.update_attribute(:free, newoccupy)
 
         RestClient.post("http://sms.ru/sms/send", :api_id => "9d3359eb-9224-2384-5d06-1118975a2cd2", :to => @user.phone, :text => "Ваш ID на велопробег #{@user.id}, пароль #{@user.more}")
 
@@ -88,6 +87,7 @@ before_filter :authenticate_user!
   # DELETE /users/1.json
   def destroy
     @user = User.find(params[:id])
+
     @user.destroy
 
     respond_to do |format|
