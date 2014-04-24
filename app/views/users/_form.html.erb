@@ -11,12 +11,7 @@
     </div>
   <% end %>
                 
-    <%= f.text_field :lastname, :class => "span4", :placeholder => "Фамилия", :required => "required" %>
-    <%= f.text_field :name, :class => "span4", :placeholder => "Имя", :required => "required" %>
-    <%= f.text_field :otchestvo, :class => "span4", :placeholder => "Отчество", :required => "required" %><br><br>
-    <lable>Ваш телефон:</lable>
-    <%= f.text_field :phone, :class => "span12", :placeholder => "Телефон", :required => "required", :id => "phone" %>
-    <br><br>
+
     <lable>Укажите звено, в котором вы хотите поехать:</lable>
     <%= f.collection_select(:zveno_id, Zveno.where("free > ?", 0), :number, :number, {}, {:class=>'span12 my-custom-class'}) %>
 
@@ -25,7 +20,7 @@
     <%= f.select(:size, [['S', 'S'], ['M', 'M'], ['L', 'L'], ['XL', 'XL'], ['XXL', 'XXL']], {}, { :class => 'span12' }) %>
 
 <br><br>
-<%= f.submit "Сохранить", :class => "btn" %>
+<%= f.submit "Сохранить", :class => "btn", :disable_with => "Сохранение данных..." %>
 
 
 <% end %>

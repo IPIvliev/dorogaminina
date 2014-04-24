@@ -1,0 +1,57 @@
+           <header>
+            <h4 class="line-divider">Регистрация на велопробег</h4>
+            <h1>Шаг №3</h1>
+            <h2>Выбор звена</h2>
+            <div class="row">
+                <div class="span8 offset2">
+                    <p>
+                        Укажите номер звена и размер футболки.
+                    </p>
+                </div>
+            </div>
+        </header>
+
+
+        <article>
+            <div class="row-fluid">
+                <!-- Contact form -->
+                <div class="span6">
+                    <h5>Выберите звено и укажите размер футболки</h5>
+
+
+                    <p id="notice"><%= notice %></p>
+
+                    <%= render '/users/form' %>
+
+                </div>
+
+                <!-- End Contact form -->
+                <!-- Contact information -->
+                <div class="span5 offset1">
+                    <h5>Сводобные звенья</h5>
+
+                    <% Zveno.all.each do |zveno| %>
+                    <div class="row">
+                        <div class="span2">
+                            <%= "Звено №#{zveno.number}" %>
+                        </div>
+                        <div class="span6">
+                            <%= progress_bar(zveno.use, :color => 'orange', :rounded => true, :tiny => true) %> 
+                        </div>
+                        <div class="span4">
+                            <%= "Свободно #{zveno.free} #{Russian.pluralize(zveno.free, 'место', 'места', 'мест')}" %>
+                        </div>
+                    </div>
+                    <% end %>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h5>Социальные вкладки</h5>
+                    <%= render "/shared/social" %>
+                </div>
+                <!-- End Contact information -->
+            </div>
+        </article>
+        <!-- End Article -->
+        <br><br><br><br><br>
+    </div>

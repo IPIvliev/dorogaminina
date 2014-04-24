@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class UsersController < ApplicationController
-
+before_filter :authenticate_user!
   helper_method :sort_column, :sort_direction
   # GET /users
   # GET /users.json
@@ -10,8 +10,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @users }
+      format.xls
     end
+
   end
 
   # GET /users/1
@@ -41,7 +42,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
 
-    RestClient.post("http://sms.ru/sms/send", :api_id => "9d3359eb-9224-2384-5d06-1118975a2cd2", :to => "79051916188", :text => "Ваш ID на велопробег #{@user.id}")
+   # RestClient.post("http://sms.ru/sms/send", :api_id => "9d3359eb-9224-2384-5d06-1118975a2cd2", :to => "79051916188", :text => "Ваш ID на велопробег #{@user.id}")
 
     respond_to do |format|
       if @user.save
@@ -74,8 +75,7 @@ class UsersController < ApplicationController
         RestClient.post("http://sms.ru/sms/send", :api_id => "9d3359eb-9224-2384-5d06-1118975a2cd2", :to => @user.phone, :text => "Ваш ID на велопробег #{@user.id}, пароль #{@user.more}")
 
         format.html { redirect_to @user,
-        notice: 'Поздравляем! Вы подали заявку на регистрацию. Для подтверждения регистрации 
-        необходимо внести взнос в размере 200 рублей.' }
+        notice: 'Поздравляем! Вы успешно зарегистрировались на IX Открытый велопробег Дорога Минина!' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

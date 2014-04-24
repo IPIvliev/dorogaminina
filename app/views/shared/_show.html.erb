@@ -1,0 +1,86 @@
+      <header>
+        <h4 class="line-divider">Регистрация на велопробег</h4>
+        <h1>Шаг №2</h1>
+        <h2>Вам необходимо внести взнос</h2>
+        <div class="row">
+          <div class="span8 offset2">
+            <p>
+              На втором шаге регистрации необходимо внести взнос в размере 200 рублей.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <article>
+                <div class="row-fluid">
+                    <!-- Contact form -->
+                    <div class="span6">
+
+                        <h5>Ваши данные</h5>
+
+
+<p id="notice"><%= notice %></p>
+
+
+<strong>Ваш пароль от личного кабинета:</strong> <span class="yellow"><%= @user.more %></span>
+<br><br>
+<strong>Статус взноса:</strong> <%= vznosstatus(@user.paid) %>
+<br><br>
+
+<table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Фамилия</th>
+          <th>Имя</th>
+          <th>Отчество</th>
+          <th>Телефон</th>
+          <th>Звено</th>
+          <th>Размер футболки</th>
+        </tr>
+      </thead>
+
+
+     <tbody>
+        <tr>
+          <td><%= @user.id %></td>
+          <td><%= @user.lastname %> </td>
+          <td><%= @user.name %></td>
+          <td><%= @user.otchestvo %></td>
+          <td><%= @user.phone %></td>
+          <td><%= @user.zveno.number if @user.zveno %></td>
+          <td><%= @user.size %></td>
+        </tr>
+      </tbody>
+</table>
+
+<%= link_to('Выйти из личного кабинета', destroy_user_session_path, :method => :delete, :class => "btn", :disable_with => "Подождите...") if current_user %>
+
+<div class="bs-callout bs-callout-warning">
+    <h4>Внимание!</h4>
+    <p>Вам необходимо запомнить свой номер ID (<strong class="red"><%= @user.id %></strong>). Подтверждение участия будет происходит по вашему номеру!</p>
+</div>
+
+</div>
+
+      <!-- End Contact form -->
+      <!-- Contact information -->
+      <div class="span5 offset1">
+
+        <h5>Добро пожаловать</h5>
+        <p>Велопробег состоится 18 мая 2014 года. О времени и месте сбора участников Вы будете проинформированы позже.</p>
+        <strong>Телефон для справок: 8 (831) 433-10-50, 8-920-293-10-50</strong>
+
+        <%= render "/shared/servicemenu" %>
+        <br/>
+        <br/>
+        <br/>
+        <h5>Социальные вкладки</h5>
+        <%= render "/shared/social" %>
+      </div>
+      <!-- End Contact information -->
+    </div>
+
+  </article>
+
+        </div>

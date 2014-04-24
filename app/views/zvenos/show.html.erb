@@ -74,9 +74,9 @@
     <th>ID</th>
     <th>Фамилия</th>
     <th>Имя</th>
-    <th>Отчество</th>
     <th>Телефон</th>
     <th>Футболка</th>
+    <th>Оплата</th>
     <th></th>
     <th></th>
   </tr>
@@ -86,9 +86,9 @@
     <td><%= link_to user.id, user %></td>
     <td><%= user.lastname %></td>
     <td><%= user.name %></td>
-    <td><%= user.otchestvo %></td>
     <td><%= user.phone %></td>
     <td><%= user.size %></td>
+    <td><%= vznosstatus(user.paid) %></td>
     <td><%= link_to 'Изменить', edit_user_path(user) %></td>
     <td><%= link_to 'Удалить', user, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
   </tr>

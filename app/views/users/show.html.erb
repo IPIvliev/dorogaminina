@@ -1,166 +1,68 @@
    <!-- NAVIGATION -->
-    <nav class="fixed-top1" id="navigation">
-        <div class="container">
-            <div class="row-fluid">
-                <div class="span12 center">
-                    <!-- LOGO -->
-                    <a class="brand pull-left" href="/index.html">
-                        IX Открытый велопробег "Дорога Минина"
-                    </a>
-                    <!-- END LOGO -->
+   <nav class="fixed-top1" id="navigation">
+    <div class="container">
+      <div class="row-fluid">
+        <div class="span12 center">
+          <!-- LOGO -->
+          <a class="brand pull-left" href="/index.html">
+            IX Открытый велопробег "Дорога Минина"
+          </a>
+          <!-- END LOGO -->
 
-                    <!-- MOBILE MENU BUTTON -->
-                    <div class="mobile-menu" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </div>
-                    <!-- END MOBILE MENU BUTTON -->
-                    
-                    <!-- MAIN MENU -->
-                    <ul id="main-menu" class="nav-collapse collapse">
-                        <li><a href="/index.html#page-welcome">Информация</a></li>
-                        <li><a href="/index.html#page-registration">Регистрация</a></li>
-                        <li><a href="/index.html#page-history">Справка</a></li>
-                        <li><a href="/index.html#page-gallery">Галерея</a></li>
-                        <li><a href="/index.html#page-clients">Партнёры</a></li>
-                    </ul>
-                    <!-- END MAIN MENU -->
-                    
-                    <!-- SOCIAL ICONS -->
-                    <div class="social-icons hover-big pull-right">
-                        <a href="#" class="sicon-facebook"><i>Facebook</i></a>
-                        <a href="#" class="sicon-twitter"><i>Twitter</i></a>
-                        <a href="#" class="sicon-linkedin"><i>LinkedIn</i></a>
-                        <a href="#" class="sicon-youtube"><i>Youtube</i></a>
-                        <a href="#" class="sicon-pinterest"><i>Pinterest</i></a>
-                    </div>
-                    <!-- END SOCIAL ICONS -->
-                </div>
-            </div>
+          <!-- MOBILE MENU BUTTON -->
+          <div class="mobile-menu" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </div>
+          <!-- END MOBILE MENU BUTTON -->
+
+          <!-- MAIN MENU -->
+          <ul id="main-menu" class="nav-collapse collapse">
+            <li><a href="/index.html#page-welcome">Информация</a></li>
+            <li><a href="/index.html#page-registration">Регистрация</a></li>
+            <li><a href="/index.html#page-history">Справка</a></li>
+            <li><a href="/index.html#page-gallery">Галерея</a></li>
+            <li><a href="/index.html#page-clients">Партнёры</a></li>
+          </ul>
+          <!-- END MAIN MENU -->
+
+          <!-- SOCIAL ICONS -->
+          <div class="social-icons hover-big pull-right">
+            <a href="#" class="sicon-facebook"><i>Facebook</i></a>
+            <a href="#" class="sicon-twitter"><i>Twitter</i></a>
+            <a href="#" class="sicon-linkedin"><i>LinkedIn</i></a>
+            <a href="#" class="sicon-youtube"><i>Youtube</i></a>
+            <a href="#" class="sicon-pinterest"><i>Pinterest</i></a>
+          </div>
+          <!-- END SOCIAL ICONS -->
         </div>
-    </nav>
-    <!-- END NAVIGATION -->
+      </div>
+    </div>
+  </nav>
+  <!-- END NAVIGATION -->
 
-    <div class="pages black-bg white page-contact" id="page-contact">
-        <div class="container">
-            <header>
-                <h4 class="line-divider">Личный кабинет</h4>
-                <h1>Здравствуйте,</h1>
-                <h2><%= current_user.name %></h2>
-                <div class="row">
-                    <div class="span8 offset2">
-                        <p>
-                            Здесь вы можете познакомиться с последники новостями велопробега, а также узнать статус взноса.
-                        </p>
-                    </div>
-                </div>
-            </header>
+  <div class="pages black-bg white page-contact" id="page-contact">
+    <div class="container">
 
+      <% if @user.paid == 0 %>
 
+        <%= render "/shared/oplata" %>
 
+      <% elsif @user.paid == 2 && @user.zveno.blank? %>
 
-            <article>
-              <% if current_user || current_user.role == 2 %>
-                <div class="row-fluid">
-                    <!-- Contact form -->
-                    <div class="span6">
-                        <h5>Ваши данные</h5>
+        <%= render "/shared/registed" %>
 
+      <% elsif @user.paid == 2 && !@user.zveno.blank? %>
 
-<p id="notice"><%= notice %></p>
+        <%= render "/shared/show" %>
 
+      <% end %>
 
-<strong>Ваш пароль от личного кабинета:</strong> <span class="yellow"><%= @user.more %></span>
-<br><br>
-<strong>Сумма взноса:</strong> 200 рублей
-<br><br>
-<strong>Статус взноса:</strong> <%= vznosstatus(@user.paid) %>
-<br><br>
+      <!-- Background map image -->
+      <div id="map-image">
+        <img src="/images/map_bck.jpg" alt="Treble">
+      </div>
 
-<% if @user.paid == 0 %>
-<div class="bs-callout bs-callout-warning">
-    <h4>Внимание!</h4>
-    <p>Внесение взноса является обязательным условием участия в велопробеге. Сумма взноса составляет (<strong class="red">200 рублей</strong>).</p>
-    <p>Место в звене не будет закреплено за вами до подтверждения факта оплаты.</p>
-    <p>Взнос можно внести Он-лайн, либо при личном визите в наш офис по адресу: г. Нижний Новгород, ул. Ильинская, д. 109</p>
-
-</div>
-<br><br>
-<% end %>
-<table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Фамилия</th>
-          <th>Имя</th>
-          <th>Отчество</th>
-          <th>Телефон</th>
-          <th>Звено</th>
-          <th>Размер футболки</th>
-        </tr>
-      </thead>
-
-
-     <tbody>
-        <tr>
-          <td><%= @user.id %></td>
-          <td><%= @user.lastname %> </td>
-          <td><%= @user.name %></td>
-          <td><%= @user.otchestvo %></td>
-          <td><%= @user.phone %></td>
-          <td><%= @user.zveno.number if @user.zveno %></td>
-          <td><%= @user.size %></td>
-        </tr>
-      </tbody>
-</table>
-
-<% if @user == current_user && current_user.paid == 0 %>
-    <%= payment_service_for current_user.id, "dorogaminina",
-                          :amount => 200,
-                          :service => :robokassa,
-                          :secret => "OdergiesFNK1" do |s| %>
-    <%= submit_tag "Внести взнос", :class => "btn" %>
-  <% end %>
-<% end %>
-
-<%= link_to('Выйти из личного кабинета', destroy_user_session_path, :method => :delete) if current_user %>
-
-
-<div class="bs-callout bs-callout-warning">
-    <h4>Внимание!</h4>
-    <p>Вам необходимо запомнить свой номер ID (<strong class="red"><%= @user.id %></strong>). Подтверждение участия будет происходит по вашему номеру!</p>
-</div>
-                    </div>
-
-                    <!-- End Contact form -->
-                    <!-- Contact information -->
-                    <div class="span5 offset1">
-
-                        <h5>Добро пожаловать</h5>
-                        <p>Велопробег состоится 18 мая 2014 года. О времене и месте сбора участников Вы будете проинформированы позже.</p>
-                        <strong>Телефон для справок: 8 (831) 433-10-50, 8-920-293-10-50</strong>
-
-                          <%= render "/shared/servicemenu" %>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <h5>Социальные вкладки</h5>
-                            <%= render "/shared/social" %>
-                    </div>
-                    <!-- End Contact information -->
-                </div>
-<% else %>
-  <p>У вас не прав доступа в этот раздел</p>
-<% end %>
-            </article>
-            <!-- End Article -->
-            <br><br><br><br><br>
-        </div>
-        
-        <!-- Background map image -->
-        <div id="map-image">
-            <img src="/images/map_bck.jpg" alt="Treble">
-        </div>
-
-        <%= render '/shared/partners' %>
+<br><br><br><br>
+    <%= render '/shared/partners' %>

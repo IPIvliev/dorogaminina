@@ -1,4 +1,5 @@
 class ZvenosController < ApplicationController
+before_filter :authenticate_user!
   # GET /zvenos
   # GET /zvenos.json
   def index

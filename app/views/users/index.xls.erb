@@ -1,0 +1,21 @@
+<table border="1">
+	<tr>
+		<th>ID</th>
+		<th>Фамилия</th>
+		<th>Имя</th>
+		<th>Отчество</th>
+		<th>Телефон</th>
+		<th>Звено</th>
+		<th>Размер футболки</th>
+	</tr>  <% @users.each do |user| %>
+	<tr>
+		<td><%= user.id %></td>
+		<td><%= user.lastname %> </td>
+		<td><%= user.name %></td>
+		<td><%= user.otchestvo %></td>
+		<td><%= user.phone %></td>
+		<td><%= user.zveno.number if user.zveno %></td>
+		<td><%= user.size %></td>
+	</tr>
+  <% end %>
+</table>

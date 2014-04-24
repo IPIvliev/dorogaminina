@@ -18,6 +18,7 @@ end
 
 # Users
 gem 'devise'
+gem 'axlsx_rails'
 
 # Design
 gem 'css3-progress-bar-rails'

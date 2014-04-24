@@ -1,0 +1,85 @@
+      <header>
+        <h4 class="line-divider">Регистрация на велопробег</h4>
+        <h1>Шаг №2</h1>
+        <h2>Вам необходимо внести взнос</h2>
+        <div class="row">
+          <div class="span8 offset2">
+            <p>
+              На втором шаге регистрации необходимо внести взнос в размере 200 рублей.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <article>
+                <div class="row-fluid">
+                    <!-- Contact form -->
+                    <div class="span6">
+<%= notice %>
+<strong>Ваш пароль от личного кабинета:</strong> <span class="yellow"><%= @user.more %></span>
+<br><br>
+        <div class="bs-callout bs-callout-warning">
+          <h4>Внимание!</h4>
+          <p>Внесение взноса является обязательным условием участия в велопробеге. Сумма взноса составляет (<strong class="red">200 рублей</strong>).</p>
+          <p>После подтверждения факта оплаты вы сможете выбрать звено и указать размер футболки.</p>
+          <p>Взнос можно внести Он-лайн, либо при личном визите в наш офис по адресу: г. Нижний Новгород, ул. Ильинская, д. 109</p>
+        </div>
+        <br>
+
+        <% if @user == current_user && current_user.paid == 0 %>
+          <%= payment_service_for current_user.id, "dorogaminina",
+          :amount => 200,
+          :service => :robokassa,
+          :secret => "OdergiesFNK1" do |s| %>
+            <%= submit_tag "Внести взнос", :class => "btn btn-danger btn-large" %>
+          <% end %>
+        <% end %>
+
+        <br>
+ 
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Фамилия</th>
+              <th>Имя</th>
+              <th>Отчество</th>
+              <th>Телефон</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td><%= @user.id %></td>
+              <td><%= @user.lastname %> </td>
+              <td><%= @user.name %></td>
+              <td><%= @user.otchestvo %></td>
+              <td><%= @user.phone %></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <%= link_to('Выйти из личного кабинета без оплаты', destroy_user_session_path, :method => :delete, :class => "btn", :disable_with => "Подождите...") if current_user %>
+</div>
+              <!-- End Contact form -->
+      <!-- Contact information -->
+      <div class="span5 offset1">
+
+        <h5>Добро пожаловать</h5>
+        <p>Велопробег состоится 18 мая 2014 года. О времени и месте сбора участников Вы будете проинформированы позже.</p>
+        <strong>Телефон для справок: 8 (831) 433-10-50, 8-920-293-10-50</strong>
+
+        <%= render "/shared/servicemenu" %>
+        <br/>
+        <br/>
+        <br/>
+        <h5>Социальные вкладки</h5>
+        <%= render "/shared/social" %>
+      </div>
+      <!-- End Contact information -->
+    </div>
+
+  </article>
+
+        </div>

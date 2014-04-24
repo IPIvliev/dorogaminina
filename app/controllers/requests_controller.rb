@@ -1,4 +1,6 @@
 class RequestsController < ApplicationController
+before_filter :authenticate_user!
+
   # GET /requests
   # GET /requests.json
   def index
@@ -79,5 +81,18 @@ class RequestsController < ApplicationController
       format.html { redirect_to requests_url }
       format.json { head :no_content }
     end
+  end
+
+
+  def edit_paid
+    @user = User.find(params[:user])
+
+    case @user.paid
+      when 0
+        @user.update_attribute(:paid, 2)
+      when 2
+        @user.update_attribute(:paid, 0)
+    end
+    redirect_to :back
   end
 end

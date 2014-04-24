@@ -80,15 +80,17 @@
               
 
         <br><br>
+         <%= link_to "Excel", users_path(format: "xls") %>
+         <br><br>
 <table class="table table-bordered">
   <tr>
     <th><%= sortable "id", "ID" %></th>
     <th><%= sortable "lastname", "Фамилия" %></th>
     <th><%= sortable "name", "Имя" %></th>
-    <th><%= sortable "otchestvo", "Отчество" %></th>
     <th>Телефон</th>
     <th><%= sortable "size", "Футболка" %></th>
     <th>Звено</th>
+    <th><%= sortable "paid", "Оплата" %>
     <th></th>
     <th></th>
   </tr>
@@ -98,16 +100,16 @@
     <td><%= link_to user.id, user %></td>
     <td><%= user.lastname %></td>
     <td><%= user.name %></td>
-    <td><%= user.otchestvo %></td>
     <td><%= user.phone %></td>
     <td><%= user.size %></td>
     <td><%= link_to user.zveno_id, user.zveno %></td>
+    <td><%= link_to vznosstatus(user.paid), :controller => :requests, :action => :edit_paid, :user => user %></td>
     <td><%= link_to 'Изменить', edit_user_path(user) %></td>
     <td><%= link_to 'Удалить', user, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
   </tr>
 <% end %>
 </table>
-
+<%= will_paginate @posts %>
 <br />
 
 <%= link_to 'Новый участник', new_user_path %>

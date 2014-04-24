@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:id]
+  :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:id]
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
@@ -16,10 +16,10 @@ class User < ActiveRecord::Base
   belongs_to :zveno
 
   def email_required?
-  		false
-	end
+    false
+  end
 
-	def email_changed?
+  def email_changed?
     false
   end
 
@@ -34,4 +34,14 @@ class User < ActiveRecord::Base
       scoped  
     end  
   end  
+
+
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |product|
+        csv << product.attributes.values_at(*column_names)
+      end
+    end
+  end
 end
