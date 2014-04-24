@@ -4,9 +4,9 @@ class Zveno < ActiveRecord::Base
   has_many :users
 
   def use
-  	z = free + occupy
+  	z = free + users.count
   	percent = 100 / z
 
-	y = occupy * percent
+	y = users.count * percent
   end
 end

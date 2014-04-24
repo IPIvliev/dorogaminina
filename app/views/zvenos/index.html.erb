@@ -81,7 +81,7 @@
     <td><%= link_to zveno.number, zveno %></td>
     <td><%= progress_bar(zveno.use, :color => 'orange', :rounded => true, :tiny => true) %> </td>
     <td><%= zveno.free %></td>
-    <td><%= zveno.occupy %></td>
+    <td><%= zveno.users.count %></td>
     <td><%= link_to 'Изменить', edit_zveno_path(zveno) %></td>
     <td><%= link_to 'Удалить', zveno, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
   </tr>
