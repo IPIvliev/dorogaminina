@@ -39,7 +39,7 @@
 
   <div class="pages black-bg white page-contact" id="page-contact">
     <div class="container">
-
+<% if current_user == @user || current_user.role == 2 %>
       <% if @user.paid == 0 %>
 
         <%= render "/shared/oplata" %>
@@ -53,7 +53,9 @@
         <%= render "/shared/show" %>
 
       <% end %>
-
+<% else %>
+  <p>У вас нет прав доступа в этот раздел сайта</p>
+<% end %>
       <!-- Background map image -->
       <div id="map-image">
         <img src="/images/map_bck.jpg" alt="Treble">
