@@ -93,7 +93,7 @@
                                         <%= progress_bar(zveno.use, :color => 'orange', :rounded => true, :tiny => true) %> 
                                     </div>
                                     <div class="span4">
-                                        <%= "Свободно #{zveno.free} #{Russian.pluralize(zveno.free, 'место', 'места', 'мест')}" %>
+                                        <%= "Свободно #{zveno.all - zveno.users.count} #{Russian.pluralize(zveno.free, 'место', 'места', 'мест')}" %>
                                     </div>
                                 </div>
                             <% end %>

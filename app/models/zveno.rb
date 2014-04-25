@@ -1,5 +1,5 @@
 class Zveno < ActiveRecord::Base
-  attr_accessible :number, :all, :occupy
+  attr_accessible :number, :all, :free
 
   has_many :users
 

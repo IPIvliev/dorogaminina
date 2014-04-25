@@ -7,6 +7,7 @@
 		<th>Телефон</th>
 		<th>Звено</th>
 		<th>Размер футболки</th>
+		<th>Оплата</th>
 	</tr>  <% @users.each do |user| %>
 	<tr>
 		<td><%= user.id %></td>
@@ -16,6 +17,7 @@
 		<td><%= user.phone %></td>
 		<td><%= user.zveno.number if user.zveno %></td>
 		<td><%= user.size %></td>
+		<td><%= vznosstatus(user.paid) %></td>
 	</tr>
   <% end %>
 </table>

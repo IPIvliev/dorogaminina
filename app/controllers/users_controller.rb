@@ -67,9 +67,9 @@ before_filter :authenticate_user!
     respond_to do |format|
       if @user.update_attributes(params[:user])
 
-        newoccupy = @user.zveno.all - @user.zveno.users.count
+        newfree = @user.zveno.all - @user.zveno.users.count
 
-        @user.zveno.update_attribute(:free, newoccupy)
+        @user.zveno.update_attribute(:free, newfree)
 
         RestClient.post("http://sms.ru/sms/send", :api_id => "9d3359eb-9224-2384-5d06-1118975a2cd2", :to => @user.phone, :text => "Ваш ID на велопробег #{@user.id}, пароль #{@user.more}")
 
