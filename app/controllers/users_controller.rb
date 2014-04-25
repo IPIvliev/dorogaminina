@@ -7,6 +7,7 @@ before_filter :authenticate_user!
   # GET /users.json
   def index
     @users = User.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 50, :page => params[:page])
+    @users_xls = User.all
 
     respond_to do |format|
       format.html # index.html.erb
