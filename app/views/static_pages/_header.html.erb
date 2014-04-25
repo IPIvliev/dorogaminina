@@ -20,7 +20,11 @@
                     <!-- MAIN MENU -->
                     <ul id="main-menu" class="nav-collapse collapse">
                         <li><a href="#page-welcome">Информация</a></li>
-                        <li><a href="#page-registration">Регистрация</a></li>
+                            <% if current_user %>
+                                <li><%= link_to "Логин", current_user %></li>
+                            <% else %>
+                                <li><a href="#page-registration">Регистрация</a></li>
+                            <% end %>
                         <li><a href="#page-history">Справка</a></li>
                         <li><a href="#page-gallery">Галерея</a></li>
                         <li><a href="#page-clients">Партнёры</a></li>
