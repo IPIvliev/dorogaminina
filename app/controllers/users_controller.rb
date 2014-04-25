@@ -72,8 +72,6 @@ before_filter :authenticate_user!
 
         @user.zveno.update_attribute(:free, newfree)
 
-        RestClient.post("http://sms.ru/sms/send", :api_id => "9d3359eb-9224-2384-5d06-1118975a2cd2", :to => @user.phone, :text => "Ваш ID на велопробег #{@user.id}, пароль #{@user.more}")
-
         format.html { redirect_to @user,
         notice: 'Поздравляем! Вы успешно зарегистрировались на IX Открытый велопробег Дорога Минина!' }
         format.json { head :no_content }
