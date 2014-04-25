@@ -9,7 +9,7 @@ module UsersHelper
 			when 1
 				return "<strong class='yellow'>Отправлен на оплату</strong>".html_safe
 			when 2
-				return "<strong class='green'>Оплачен</strong>".html_safe
+				return "<strong class='green_pay'>Оплачен</strong>".html_safe
 		end
 	end
 end

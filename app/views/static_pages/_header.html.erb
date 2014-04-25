@@ -24,16 +24,12 @@
                         <li><a href="#page-history">Справка</a></li>
                         <li><a href="#page-gallery">Галерея</a></li>
                         <li><a href="#page-clients">Партнёры</a></li>
+                        <li><%= link_to('Выход', destroy_user_session_path, :method => :delete, :class => "btn", :disable_with => "Подождите...") if current_user %></li>
                     </ul>
                     <!-- END MAIN MENU -->
                     
                     <!-- SOCIAL ICONS -->
-                    <div class="social-icons hover-big pull-right">
-                        <a href="#" class="sicon-facebook"><i>Facebook</i></a>
-                        <a href="#" class="sicon-twitter"><i>Twitter</i></a>
-                        <a href="#" class="sicon-linkedin"><i>Vkontakte</i></a>
-                        <a href="#" class="sicon-youtube"><i>Youtube</i></a>
-                    </div>
+                        <%= render "/shared/headsocial" %>
                     <!-- END SOCIAL ICONS -->
                 </div>
             </div>
