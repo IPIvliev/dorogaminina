@@ -30,7 +30,7 @@
                 <div class="span5 offset1">
                     <h5>Сводобные звенья</h5>
 
-                    <% Zveno.all.each do |zveno| %>
+                    <% Zveno.where("free > ?", 0).each do |zveno| %>
                     <div class="row">
                         <div class="span2">
                             <%= "Звено №#{zveno.number}" %>
