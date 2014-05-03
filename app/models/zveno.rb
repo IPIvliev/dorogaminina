@@ -10,7 +10,7 @@ class Zveno < ActiveRecord::Base
   def use
   	percent = 100 / vse
 
-	y = users.count * percent
+	y = users.where(:paid => 2).count * percent
   end
 
 
