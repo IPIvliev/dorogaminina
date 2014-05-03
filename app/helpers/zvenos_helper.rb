@@ -7,7 +7,7 @@ module ZvenosHelper
 		when false
 			return "<span class='red'>Закрыто</span>".html_safe
 		when true
-			return "<span class='green'>Открыто</span>".html_safe
+			return "<span class='green_pay'>Открыто</span>".html_safe
 		end
 	end
 end
