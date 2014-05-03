@@ -5,9 +5,9 @@ module ZvenosHelper
 	def zveno_status(can)
 		case can
 		when false
-			return "<span class='red'>Закрыто</span>"
+			return "<span class='red'>Закрыто</span>".html_safe
 		when true
-			return "<span class='green'>Открыто</span>"
+			return "<span class='green'>Открыто</span>".html_safe
 		end
 	end
 end
