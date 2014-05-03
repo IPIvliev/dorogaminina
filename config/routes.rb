@@ -23,6 +23,7 @@ Dorogaminina::Application.routes.draw do
 # Служебный раздел
   match "/statistics.html", :to => "static_pages#statistics"
   match "user/edit_paid", :to => "requests#edit_paid"
+  match "user/edit_can", :to => "zvenos#edit_can"
 
 # Корневая страница
  root :to => "static_pages#index"

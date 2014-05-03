@@ -68,9 +68,9 @@ before_filter :authenticate_user!
     respond_to do |format|
       if @user.update_attributes(params[:user])
 
-        newfree = @user.zveno.all - @user.zveno.users.count
+        # newfree = @user.zveno.all - @user.zveno.users.count
 
-        @user.zveno.update_attribute(:free, newfree)
+        # @user.zveno.update_attribute(:free, newfree)
 
         format.html { redirect_to @user,
         notice: 'Поздравляем! Вы успешно зарегистрировались на IX Открытый велопробег Дорога Минина!' }

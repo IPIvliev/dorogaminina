@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140425094724) do
+ActiveRecord::Schema.define(:version => 20140503132405) do
 
   create_table "users", :force => true do |t|
     t.string   "name"
@@ -42,10 +42,10 @@ ActiveRecord::Schema.define(:version => 20140425094724) do
   create_table "zvenos", :force => true do |t|
     t.integer  "number"
     t.integer  "user_id"
-    t.integer  "all"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-    t.integer  "free",       :default => 0
+    t.integer  "vse"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.boolean  "can",        :default => true
   end
 
 end

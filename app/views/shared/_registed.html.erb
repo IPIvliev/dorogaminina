@@ -30,7 +30,7 @@
                 <div class="span5 offset1">
                     <h5>Сводобные звенья</h5>
 
-                    <% Zveno.where("free > ?", 0).each do |zveno| %>
+                    <% Zveno.add_on.with_n_users.each do |zveno| %>
                     <div class="row">
                         <div class="span2">
                             <%= "Звено №#{zveno.number}" %>
@@ -39,7 +39,7 @@
                             <%= progress_bar(zveno.use, :color => 'orange', :rounded => true, :tiny => true) %>
                         </div>
                         <div class="span4">
-                            <%= "Свободно #{zveno.all - zveno.users.count} #{Russian.pluralize(zveno.all - zveno.users.count, 'место', 'места', 'мест')}" %>
+                            <%= "Свободно #{zveno.vse - zveno.users.count} #{Russian.pluralize(zveno.vse - zveno.users.count, 'место', 'места', 'мест')}" %>
                         </div>
                     </div>
                     <% end %>

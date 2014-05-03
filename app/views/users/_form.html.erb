@@ -13,12 +13,21 @@
                 
 
     <lable>Укажите звено, в котором вы хотите поехать:</lable>
-    <%= f.collection_select(:zveno_id, Zveno.where("free > ?", 0), :number, :number, {}, {:class=>'span12 my-custom-class'}) %>
+    <% if current_user.role == 2 %>
+      <%= f.collection_select(:zveno_id, Zveno.add_on.with_n_users, :number, :number, {}, {:class=>'span12 my-custom-class'}) %>
+    <% else %>
+      <%= f.collection_select(:zveno_id, Zveno.all, :number, :number, {}, {:class=>'span12 my-custom-class'}) %>
+    <% end %>
 
     <br><br>
     <lable>Укажите размер футболки:</lable>
     <%= f.select(:size, [['S', 'S'], ['M', 'M'], ['L', 'L'], ['XL', 'XL'], ['XXL', 'XXL']], {}, { :class => 'span12' }) %>
 
+    <% if current_user.role == 2 %>
+        <br><br>
+        <lable>Телефон:</lable>
+        <%= f.text_field :phone, :placeholder => :phone, :class => 'span12' %>
+    <% end %>
 <br><br>
 <%= f.submit "Сохранить", :class => "btn", :disable_with => "Сохранение данных..." %>
 

@@ -50,9 +50,9 @@
     <div class="pages black-bg white page-contact" id="page-contact">
         <div class="container">
             <header>
-                <h4 class="line-divider">Регистрация на велопробег</h4>
-                <h1>Шаг №2</h1>
-                <h2>Выбор звена</h2>
+                <h4 class="line-divider">Изменить данные пользователя</h4>
+                <h1>Для служебного доступа</h1>
+                <h2>Выбор звена и футболки</h2>
                 <div class="row">
                     <div class="span8 offset2">
                         <p>
@@ -69,7 +69,7 @@
                 <div class="row-fluid">
                     <!-- Contact form -->
                     <div class="span6">
-                        <h5>Зарегистрироваться</h5>
+                        <h5>Изменить данные</h5>
 
 
 <p id="notice"><%= notice %></p>
@@ -84,7 +84,7 @@
                         <h5>Сводобные звенья</h5>
 
 
-                            <% Zveno.where("free > ?", 0).each do |zveno| %>
+                            <% Zveno.add_on.with_n_users.each do |zveno| %>
                                 <div class="row">
                                     <div class="span2">
                                         <%= "Звено №#{zveno.number}" %>
@@ -93,7 +93,7 @@
                                         <%= progress_bar(zveno.use, :color => 'orange', :rounded => true, :tiny => true) %> 
                                     </div>
                                     <div class="span4">
-                                        <%= "Свободно #{zveno.all - zveno.users.count} #{Russian.pluralize(zveno.free, 'место', 'места', 'мест')}" %>
+                                        <%= "Свободно #{zveno.vse - zveno.users.count} #{Russian.pluralize(zveno.vse - zveno.users.count, 'место', 'места', 'мест')}" %>
                                     </div>
                                 </div>
                             <% end %>

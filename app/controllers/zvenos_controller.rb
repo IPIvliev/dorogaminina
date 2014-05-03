@@ -81,4 +81,12 @@ before_filter :authenticate_user!
       format.json { head :no_content }
     end
   end
+
+  def edit_can
+    @zveno = Zveno.find(params[:zveno])
+
+    @zveno.toggle!(:can)
+    
+    redirect_to :back
+  end
 end

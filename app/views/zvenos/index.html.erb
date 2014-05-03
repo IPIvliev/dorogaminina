@@ -74,14 +74,16 @@
     <th>Занято мест</th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @zvenos.each do |zveno| %>
   <tr>
     <td><%= link_to zveno.number, zveno %></td>
     <td><%= progress_bar(zveno.use, :color => 'orange', :rounded => true, :tiny => true) %> </td>
-    <td><%= zveno.free %></td>
+    <td><%= zveno.vse - zveno.users.count %></td>
     <td><%= zveno.users.count %></td>
+    <td><%= link_to zveno_status(zveno.can), :controller => :zvenos, :action => :edit_can, :zveno => zveno %></td>
     <td><%= link_to 'Изменить', edit_zveno_path(zveno) %></td>
     <td><%= link_to 'Удалить', zveno, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
   </tr>
