@@ -22,9 +22,11 @@
                         <!-- Blog title -->
                         <h5>
                             <small> <%= Russian::strftime(@post.created_at, "%d %B %Y") %></small>
+                            <% if current_user %>
                             <%= link_to "<small>Изменить</small>".html_safe, edit_post_path(@post), :class => 'yellow' if current_user.role == 2 || current_user == @post.user %> 
 	                        	<%= '|' if current_user.role == 2 || current_user == @post.user %>
 	                            <%= link_to "<small>Удалить</small>".html_safe, @post, method: :delete, :class => "red", data: { confirm: "Вы уверены?" } if current_user.role == 2 || current_user == post.user %>
+	                        <% end %>
                         </h5>
                         
                         <!-- Blog post description -->
@@ -44,8 +46,9 @@
                     <!-- Tags -->
                     <div class="block">
                                             <!-- Tags -->
+<% if current_user %>
         <%= render "/shared/servicemenu" %>
- 
+ <% end %>
         <%= render "/shared/headsocial" %>
                     </div>
                     
