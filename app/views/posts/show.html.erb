@@ -1,0 +1,61 @@
+    <!-- NAVIGATION -->
+<%= render '/shared/navigation' %>
+    <!-- END NAVIGATION -->
+    
+    <!-- PAGE | BLOG -->
+    <div class="pages page-blog-list" id="page-blog-list">
+        <div class="container">
+            <!-- Header -->
+            <header>
+                <h4 class="line-divider">Новости</h4>
+            </header>
+            <!-- End Header -->
+
+            <div class="row-fluid">
+                <div class="span8 blog-details">
+                    <!-- Article -->
+                    <article>
+                    	<h5><%= @post.name %></h5>
+                        <!-- Blog image -->
+                        <%= image_tag @post.picture_url %>
+                        
+                        <!-- Blog title -->
+                        <h5>
+                            <small> <%= Russian::strftime(@post.created_at, "%d %B %Y") %></small>
+                            <%= link_to "<small>Изменить</small>".html_safe, edit_post_path(@post), :class => 'yellow' if current_user.role == 2 || current_user == @post.user %> 
+	                        	<%= '|' if current_user.role == 2 || current_user == @post.user %>
+	                            <%= link_to "<small>Удалить</small>".html_safe, @post, method: :delete, :class => "red", data: { confirm: "Вы уверены?" } if current_user.role == 2 || current_user == post.user %>
+                        </h5>
+                        
+                        <!-- Blog post description -->
+                        <%= @post.text.html_safe %>
+                        
+                    </article>
+                    <!-- End Article -->
+
+
+                </div>
+                <div class="span4 blog-list-right">
+                    <!-- Latest blog posts block -->
+                    <div class="block">
+                    	<%= render 'short_news' %>
+                    </div>
+                    
+                    <!-- Tags -->
+                    <div class="block">
+                                            <!-- Tags -->
+        <%= render "/shared/servicemenu" %>
+ 
+        <%= render "/shared/headsocial" %>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END PAGE | BLOG -->
+    
+    <!-- PAGE | REGISTRATION -->
+<%= render '/shared/registration' %>
+    <!-- END PAGE | REGISTRATION -->
+

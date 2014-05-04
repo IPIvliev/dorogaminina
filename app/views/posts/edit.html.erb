@@ -1,0 +1,50 @@
+    <!-- NAVIGATION -->
+<%= render '/shared/navigation' %>
+    <!-- END NAVIGATION -->
+    
+    <!-- PAGE | BLOG -->
+    <div class="pages page-blog-list" id="page-blog-list">
+        <div class="container">
+            <!-- Header -->
+            <header>
+                <h4 class="line-divider">Новости</h4>
+            </header>
+            <!-- End Header -->
+
+            <div class="row-fluid">
+                <div class="span8 blog-details">
+                    <!-- Article -->
+                    <article>
+                        
+                        <!-- Blog title -->
+                        <%= render 'form' %>
+                        
+                    </article>
+                    <!-- End Article -->
+
+
+                </div>
+                <div class="span4 blog-list-right">
+                    <!-- Latest blog posts block -->
+                    <div class="block">
+                        <%= render 'short_news' %>
+                    </div>
+                    
+                    <!-- Tags -->
+        <%= render "/shared/servicemenu" %>
+        <br/>
+        <br/>
+        <br/>
+        <h5>Социальные вкладки</h5>
+        <%= render "/shared/social" %>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END PAGE | BLOG -->
+    
+    <!-- PAGE | REGISTRATION -->
+<%= render '/shared/registration' %>
+    <!-- END PAGE | REGISTRATION -->
+

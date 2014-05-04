@@ -1,45 +1,4 @@
-   <!-- NAVIGATION -->
-   <nav class="fixed-top1" id="navigation">
-    <div class="container">
-      <div class="row-fluid">
-        <div class="span12 center">
-          <!-- LOGO -->
-          <a class="brand pull-left" href="/index.html">
-            IX Открытый велопробег "Дорога Минина"
-          </a>
-          <!-- END LOGO -->
-
-          <!-- MOBILE MENU BUTTON -->
-          <div class="mobile-menu" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </div>
-          <!-- END MOBILE MENU BUTTON -->
-
-          <!-- MAIN MENU -->
-          <ul id="main-menu" class="nav-collapse collapse">
-            <li><a href="/index.html#page-welcome">Информация</a></li>
-            <% if current_user %>
-              <li><%= link_to "Логин", current_user %></li>
-            <% else %>
-              <li><a href="#page-registration">Регистрация</a></li>
-            <% end %>
-            <li><a href="/index.html#page-history">Справка</a></li>
-            <li><a href="/index.html#page-gallery">Галерея</a></li>
-            <li><a href="/index.html#page-clients">Партнёры</a></li>
-            <li><%= link_to('Выход', destroy_user_session_path, :method => :delete, :class => "btn", :disable_with => "Подождите...") if current_user %></li>
-          </ul>
-          <!-- END MAIN MENU -->
-
-          <!-- SOCIAL ICONS -->
-          <%= render "/shared/headsocial" %>
-          <!-- END SOCIAL ICONS -->
-        </div>
-      </div>
-    </div>
-  </nav>
-  <!-- END NAVIGATION -->
+<%= render '/shared/navigation' %>
 
   <div class="pages black-bg white page-contact" id="page-contact">
     <div class="container">

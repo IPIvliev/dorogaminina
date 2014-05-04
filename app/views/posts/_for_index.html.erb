@@ -1,0 +1,60 @@
+    <!-- PAGE | BLOG -->
+    <div class="pages page-blog" id="page-blog">
+        <div class="container">
+            <!-- Header -->
+            <header>
+                <h4 class="line-divider">Новости</h4>
+                <h1>Новости велопробега</h1>
+
+            </header>
+            <!-- End Header -->
+            
+            <!-- Article -->
+            <article>
+                <!-- Blog articles -->
+                <ul class="thumbnails">
+                    <!-- Blog post -->
+                    <% if !@posts.blank? %>
+                        <% @posts.each do |post| %>
+                            <li class="span4">
+                            
+                                <!-- Blog image -->
+                                <%= link_to image_tag(post.picture.thumb.url), post %>
+                                
+                                <!-- Blog title -->
+                                <h5>
+                                    <%= post.name %><br/>
+                                    <small><%= Russian::strftime(post.created_at, "%d %B %Y") %></small>
+                                </h5>
+                                
+                                <!-- Blog post description -->
+                                <p class="smallFontBy08"><%= truncate( raw( sanitize(post.text, :tags => %w(table tr td), :attributes => %w(id class style) ) ), :length => 165, :omission => "...") %></p>
+                                
+                                <!-- Blog read more -->
+                                <div class="read-more">
+                                    <%= link_to "Читать полностью", post %>
+                                </div>
+                            </li>
+                        <% end %>
+                   <% else %>
+                    <p>Пока не опубликована ни одна новость.</p>
+                   <% end %>
+                </ul>
+            </article>
+            <!-- End Article -->
+    
+            <!-- Footer -->
+            <footer>
+                <!-- 
+                <div class="show-more-cube">
+                    <%= link_to "<span>Все<br/>Новости</span>".html_safe, posts_path %>
+                </div>
+                    -->
+            </footer>
+            <!-- End Footer  -->
+        </div>
+    </div>
+    <!-- END PAGE | BLOG -->
+
+
+

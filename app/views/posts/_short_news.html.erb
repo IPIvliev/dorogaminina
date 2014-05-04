@@ -1,0 +1,8 @@
+                        <h6>Последние новости</h6>
+                        <ul class="simple-link-list">
+                        	<% Post.all.each do |post| %>
+                            <li>
+                                <%= link_to post.name, post %>
+                            </li>
+                            <% end %>
+                        </ul>
