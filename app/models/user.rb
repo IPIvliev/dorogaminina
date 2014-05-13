@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
 
   def self.search(search)  
     if search  
-      where('lastname LIKE ?', "%#{search}%")  
+      where('lastname LIKE ? OR id LIKE ?', "%#{search}%", "%#{search}%")  
     else  
       scoped  
     end  
