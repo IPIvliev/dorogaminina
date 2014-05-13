@@ -1,4 +1,4 @@
-   <!-- NAVIGATION -->
+﻿   <!-- NAVIGATION -->
     <nav class="fixed-top1" id="navigation">
         <div class="container">
             <div class="row-fluid">
@@ -63,7 +63,7 @@
                 <div class="row-fluid">
                     <!-- Contact form -->
                     <div class="span6">
-                    	<strong class="red">Звено №<%= @zveno.id %></strong><br><br>
+                    	<strong class="red">Звено №<%= @zveno.number %></strong><br><br>
                     	<strong>Всего мест:</strong> <%= @zveno.vse %><br>
                     	<strong>Уже зарегистрировалось:</strong> <%= @zveno.users.count %><br>
                     	<strong>Свободно мест:</strong> <%= @zveno.vse - @zveno.users.count %>

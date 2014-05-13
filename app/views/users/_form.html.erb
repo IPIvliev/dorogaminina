@@ -1,4 +1,4 @@
-<%= form_for @user, :html => { :class => "form-inline", :role => "form" } do |f| %>
+﻿<%= form_for @user, :html => { :class => "form-inline", :role => "form" } do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -14,7 +14,7 @@
 
     <lable>Укажите звено, в котором вы хотите поехать:</lable>
     <% if current_user.role == 2 %>
-      <%= f.collection_select(:zveno_id, Zveno.all, :number, :number, {}, {:class=>'span12 my-custom-class'}) %>
+      <%= f.collection_select(:zveno_id, Zveno.all, :number, :id, {}, {:class=>'span12 my-custom-class'}) %>
     <% else %>
       <%= f.collection_select(:zveno_id, Zveno.add_on.with_n_users, :number, :number, {}, {:class=>'span12 my-custom-class'}) %>
     <% end %>
