@@ -14,9 +14,9 @@
 
     <lable>Укажите звено, в котором вы хотите поехать:</lable>
     <% if current_user.role == 2 %>
-      <%= f.collection_select(:zveno_id, Zveno.all, :number, :id, {}, {:class=>'span12 my-custom-class'}) %>
+      <%= f.collection_select(:zveno_id, Zveno.all, :id, :number, {}, {:class=>'span12 my-custom-class'}) %>
     <% else %>
-      <%= f.collection_select(:zveno_id, Zveno.add_on.with_n_users, :number, :number, {}, {:class=>'span12 my-custom-class'}) %>
+      <%= f.collection_select(:zveno_id, Zveno.add_on.with_n_users, :id, :number, {}, {:class=>'span12 my-custom-class'}) %>
     <% end %>
 
     <br><br>
