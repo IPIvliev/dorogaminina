@@ -124,7 +124,7 @@ color: red;
  .page-blog-list .write-comment{font-size:14px;line-height:19px}
  .page-blog-list .write-comment form input[type='text']{background-color:#eee;color:#000;font-size:18px}
  .page-blog-list .write-comment form input[type='text']:focus{background-color:#fff}
- .page-blog-list .write-comment form textarea{background-color:#eee;color:#666;font-size:14px}
+ .page-blog-list .write-comment form textarea{background-color:#fff;color:#000;font-size:14px}
  .page-blog-list .write-comment form textarea:focus{background-color:#fff}
  .page-blog-list .write-comment form .btn{font-size:11px;font-weight:bold;letter-spacing:1px;text-transform:uppercase}
  .page-blog-list .write-comment form .media{padding-top:24px}
@@ -135,7 +135,7 @@ color: red;
  .page-contact #map-image img{height:100%;width:100%}
  .page-contact form input[type='email'],.page-contact form input[type='text']{background-color:#fff;color:#000;font-size:1.5em}
  .page-contact form input[type='email']:focus,.page-contact form input[type='text']:focus{background-color:#fff}
- .page-contact form textarea{background-color:#ccc;color:#666;font-size:.8em}
+ .page-contact form textarea{background-color:#fff;color:#000;font-size:1.8em}
  .page-contact form textarea:focus{background-color:#fff}
  .page-contact form .btn{font-size:11px;font-weight:bold;letter-spacing:1px;text-transform:uppercase}
  .page-contact form .media{padding-top:24px}

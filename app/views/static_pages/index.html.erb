@@ -30,15 +30,12 @@
                                 <h1>Дорога Минина</h1>
                             </li>
                             <li>
-                                <h1>18 мая 2014 года</h1>
-                            </li>
-                            <li>
                                 <h1>Нижний Новгород - Балахна</h1>
                             </li>
 
                         </ul>
                     </div>
-                    <p>IX Открытый велопробег "Дорога Минина". Старт 18 мая.</p>
+                    <p>X Открытый велопробег "Дорога Минина". Собираем предложения!</p>
                     <%= render "/shared/social" %>
                     <p></p>
                     <div class="social-icons sicon-white bordered">
@@ -49,12 +46,13 @@
                             <img src="/images/clients/fnk.jpg" alt="Treble">
                         </a>
                     </div><p>Организаторы проекта</p>
+                    <!--
                     <div class="social-icons sicon-white bordered">
 
                         <a href="#">
                             <img src="/images/clients/lukoil.jpg" alt="Treble">
                         </a>
-                    </div><p>ГЕНЕРАЛЬНЫЙ ПАРТНЁР ПРОЕКТА - КОМПАНИЯ "ЛУКОЙЛ"</p>
+                    </div><p>ГЕНЕРАЛЬНЫЙ ПАРТНЁР ПРОЕКТА - КОМПАНИЯ "ЛУКОЙЛ"</p> -->
                 </div>
             </div>
         </div>
@@ -63,7 +61,7 @@
 <!-- END PAGE | Welcome -->
 
 
-<%= render '/shared/registration' %>
+<%= render '/shared/add_advice' %>
 
 <%= render '/posts/for_index' %>
 
@@ -78,7 +76,7 @@
         <h1>История велопробега</h1>
         <div class="row">
             <div class="span8 offset2">
-                <p>18 мая 2014 года состоится IX Открытый велопробег «Дорога Минина», посвященный Дню памяти гражданина Минина. Велопробег проводится Фондом «Нижегородский Кремль» при поддержке Правительства Нижегородской области. Велопробег проводится ежегодно в воскресенье, ближайшее ко Дню памяти гражданина Минина (21 мая). Велопробег проходит по пути первого этапа движения Нижегородского ополчения 1612 года: Нижний Новгород – Балахна. Общая протяженность маршрута составляет 63 километра. К участию в велопробеге приглашаются лица достигшие 18-ти лет.</p>
+                <p>В 2015 году состоится юбилейный X Открытый велопробег «Дорога Минина», посвященный Дню памяти гражданина Минина. Велопробег проводится Фондом «Нижегородский Кремль» при поддержке Правительства Нижегородской области. Велопробег проводится ежегодно в воскресенье, ближайшее ко Дню памяти гражданина Минина (21 мая). Велопробег проходит по пути первого этапа движения Нижегородского ополчения 1612 года: Нижний Новгород – Балахна. Общая протяженность маршрута составляет 63 километра. К участию в велопробеге приглашаются лица достигшие 18-ти лет.</p>
                 <ul><strong>Программа велопробега включает в себя:</strong>
                     <li>встреча участников и распределение по звеньям на пл. Минина и Пожарского у памятника В.П. Чкалову;
                         <li>старт от памятника Минину и Пожарскому на площади Народного единства в Нижнем Новгороде;
@@ -178,19 +176,31 @@
                             <a href="#" class="plugin-filter active" data-filter="all">Все</a>
                         </li>
                         <li>
-                            <a href="#" class="plugin-filter" data-filter="registration">Регистрация</a>
+                            <a href="#" class="plugin-filter" data-filter="2006">2006</a>
                         </li>
                         <li>
-                            <a href="#" class="plugin-filter" data-filter="start">Старт</a>
+                            <a href="#" class="plugin-filter" data-filter="2007">2007</a>
                         </li>
                         <li>
-                            <a href="#" class="plugin-filter" data-filter="go">Движение</a>
+                            <a href="#" class="plugin-filter" data-filter="2008">2008</a>
                         </li>
                         <li>
-                            <a href="#" class="plugin-filter" data-filter="town">Балахна</a>
+                            <a href="#" class="plugin-filter" data-filter="2009">2009</a>
                         </li>
-                        <li>
-                            <a href="#" class="plugin-filter" data-filter="stop">Привал</a>
+                       <li>
+                            <a href="#" class="plugin-filter" data-filter="2010">2010</a>
+                        </li>
+                       <li>
+                            <a href="#" class="plugin-filter" data-filter="2011">2011</a>
+                        </li>
+                       <li>
+                            <a href="#" class="plugin-filter" data-filter="2012">2012</a>
+                        </li>
+                       <li>
+                            <a href="#" class="plugin-filter" data-filter="2013">2013</a>
+                        </li>
+                       <li>
+                            <a href="#" class="plugin-filter" data-filter="2014">2014</a>
                         </li>
                     </ul>
                 </nav>
@@ -205,22 +215,22 @@
                         portfolio-items: Customise portfolio items for hover effect.
                     -->
                     <ul class="thumbnails plugin-filter-elements portfolio-items">
-                        <li class="span4 mix start">
+                        <li class="span4 mix 2006">
                             <a href="#pages/portfolio/project_1.html" data-destination="portfolio-items" data-insert="before">
                                 <!-- Portfolio image -->
                                 <img src="/images/works/01.jpg" alt="Treble">
                                 
                                 <!-- Portfolio name, activated on hover -->
                                 <div class="portfolio-overlay">
-                                    <h4>На старте</h4>
+                                    <h4>2007</h4>
                                 </div>
                             </a>
                         </li>
-                        <li class="span4 mix go">
+                        <li class="span4 mix 2012">
                             <a href="#pages/portfolio/project_2.html" data-destination="portfolio-items" data-insert="before">
                                 <img src="/images/works/02.jpg" alt="Treble">
                                 <div class="portfolio-overlay">
-                                    <h4>Движение</h4>
+                                    <h4>2008</h4>
                                 </div>
                             </a>
                         </li>
@@ -228,43 +238,43 @@
                             <a href="#pages/portfolio/project_3.html" data-destination="portfolio-items" data-insert="before">
                                 <img src="/images/works/03.jpg" alt="Treble">
                                 <div class="portfolio-overlay">
-                                    <h4>На старте</h4>
+                                    <h4>2009</h4>
                                 </div>
                             </a>
                         </li>
-                        <li class="span4 mix stop">
+                        <li class="span4 mix 2007">
                             <a href="#" data-destination="portfolio-items" data-insert="before">
                                 <img src="/images/works/10.jpg" alt="Treble">
                                 <div class="portfolio-overlay">
-                                    <h4>Привал</h4>
+                                    <h4>2010</h4>
                                 </div>
                             </a>
                         </li>
-                        <li class="span4 mix town">
+                        <li class="span4 mix 2008">
                             <a href="#pages/portfolio/project_5.html" data-destination="portfolio-items" data-insert="before">
                                 <img src="/images/works/05.jpg" alt="Treble">
                                 <div class="portfolio-overlay">
-                                    <h4>В Балахне</h4>
+                                    <h4>2011</h4>
                                 </div>
                             </a>
                         </li>
-                        <li class="span4 mix start">
+                        <li class="span4 mix 2009">
                             <a href="#pages/portfolio/project_6.html" data-destination="portfolio-items" data-insert="before">
                                 <img src="/images/works/06.jpg" alt="Treble">
                                 <div class="portfolio-overlay">
-                                    <h4>На старте</h4>
+                                    <h4>2012</h4>
                                 </div>
                             </a>
                         </li>
-                        <li class="span4 mix town">
+                        <li class="span4 mix 2010">
                             <a href="#pages/portfolio/project_7.html" data-destination="portfolio-items" data-insert="before">
                                 <img src="/images/works/07.jpg" alt="Treble">
                                 <div class="portfolio-overlay">
-                                    <h4>В Балахне</h4>
+                                    <h4>2013</h4>
                                 </div>
                             </a>
                         </li>
-                        <li class="span4 mix registration">
+                        <li class="span4 mix 2011">
                             <a href="#pages/portfolio/project_8.html" data-destination="portfolio-items" data-insert="before">
                                 <img src="/images/works/08.jpg" alt="Treble">
                                 <div class="portfolio-overlay">
@@ -272,7 +282,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="span4 mix go">
+                        <li class="span4 mix 2012">
                             <a href="#pages/portfolio/project_9.html" data-destination="portfolio-items" data-insert="before">
                                 <img src="/images/works/09.jpg" alt="Treble">
                                 <div class="portfolio-overlay">

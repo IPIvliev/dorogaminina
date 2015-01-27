@@ -1,0 +1,12 @@
+  <div class="span6">
+    
+        <h5>Предложение</h5>
+
+        <%= form_for Advice.new, :url => {:controller => "static_pages", :action => "add_advice" } do |f| %>
+
+                        <%= f.text_area :text, :class => "span12 form-control", :placeholder => "Текст предложения. Как с вами связаться?", :required => "required" %>
+
+            <%= f.submit "Отправить", :class => "btn btn-primary", :disable_with => "Отправляется..." %>
+        <% end %>
+
+  </div>

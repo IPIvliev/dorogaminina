@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'will_paginate', '3.0.3'
+gem 'kaminari'
 gem 'bootstrap-will_paginate', '0.0.6'
 
 # Bundle edge Rails instead:
@@ -13,8 +13,12 @@ gem 'russian'
 gem 'thin'
 
 group :production do
-  gem 'mysql2'
+ # gem 'mysql2'
 end
+
+# Admin panel
+gem 'rails_admin'
+gem 'cancan'
 
 # Users
 gem 'devise'
@@ -34,7 +38,7 @@ gem  'rest-client'
 
 # Images
 gem 'carrierwave'
-gem 'rmagick', '2.13.2'
+gem 'rmagick', :require => 'RMagick'
 
 # Gems used only for assets and not required
 # in production environments by default.

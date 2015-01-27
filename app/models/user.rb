@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   validates :otchestvo, presence: true
   validates :phone, presence: true
 
+  paginates_per 50
+
   belongs_to :zveno
 
   def email_required?

@@ -1,5 +1,7 @@
 Dorogaminina::Application.routes.draw do
 
+  mount RailsAdmin::Engine => '/kro', :as => 'rails_admin'
+
   resources :posts
 
 
@@ -27,6 +29,7 @@ Dorogaminina::Application.routes.draw do
   match "/statistics.html", :to => "static_pages#statistics"
   match "user/edit_paid", :to => "requests#edit_paid"
   match "user/edit_can", :to => "zvenos#edit_can"
+  match 'advice/create', to: 'static_pages#add_advice'
 
 # Корневая страница
  root :to => "static_pages#index"

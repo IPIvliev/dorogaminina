@@ -4,15 +4,13 @@
             <% if !current_user %>
             <!-- Header -->
             <header>
-                <h4 class="line-divider">Регистрация на велопробег</h4>
-                <h1>Регистрация открыта!</h1>
-                <h4 class="red">Регистрация на велопробег закрывается 15 мая!</h4>
+                <h4 class="line-divider">Есть идеи?</h4>
+                <h1>Ваши предложения для организаторов Велопробега</h1>
+                <h4 class="red">Мы собираем предложения о проведении Юбилейного велопробега</h4>
                 <div class="row">
                     <div class="span8 offset2">
                         <p>
-                            Здесь вы можете зарегистрироваться на IX Открытый велопробег "Дорога Минина".
-                            <br>
-                            Внимание! К участию в велопробеге допускаются лица достигшие 18-ти лет.
+                            Оставьте своё плодложение в форме ниже.
                         </p>
                     </div>
                 </div>
@@ -24,7 +22,7 @@
                 <div class="row-fluid">
 
                     <!-- Contact form -->
-                        <%= render "shared/register" %>
+                        <%= render "shared/advice_form" %>
 
                     <!-- Contact information -->
                     <div class="span5 offset1">
