@@ -3,3 +3,5 @@ require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
 Dorogaminina::Application.initialize!
+
+LANG="en_US.UTF-8"
