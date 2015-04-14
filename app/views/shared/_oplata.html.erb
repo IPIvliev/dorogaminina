@@ -26,8 +26,9 @@
         </div>
         <br>
 
+        <% numzakaz = current_user.id + 3000 %>
         <% if @user == current_user && current_user.paid == 0 %>
-          <%= payment_service_for current_user.id, "dorogaminina",
+          <%= payment_service_for numzakaz, "dorogaminina",
           :amount => 350,
           :service => :robokassa,
           :secret => "OdergiesFNK1" do |s| %>
