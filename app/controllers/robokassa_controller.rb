@@ -40,6 +40,7 @@ class RobokassaController < ApplicationController
   end
 
   def find_payment
-    @user = User.find(@notification.item_id)
+    userid = @notification.item_id - 3000
+    @user = User.find(userid)
   end
 end
