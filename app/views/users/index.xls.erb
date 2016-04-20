@@ -8,6 +8,7 @@
 		<th>Звено</th>
 		<th>Размер футболки</th>
 		<th>Оплата</th>
+		<th>Доставка</th>
 	</tr>  <% @users_xls.each do |user| %>
 	<tr>
 		<td><%= user.id %></td>
@@ -18,6 +19,7 @@
 		<td><%= user.zveno.number if user.zveno %></td>
 		<td><%= user.size %></td>
 		<td><%= vznosstatus(user.paid) %></td>
+		<td><%= dostavka(user.dostavka) %></td>
 	</tr>
   <% end %>
 </table>

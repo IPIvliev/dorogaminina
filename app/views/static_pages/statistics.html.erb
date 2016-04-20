@@ -62,7 +62,26 @@
     <td><%= User.where(:size => "XXL").count %></td>
   </tr>
 </table>
+<br><br>
 
+<h5>Доставка</h5>
+<table class="table table-bordered">
+  <tr>
+    <th>Без доставки</th>
+    <th>Московский вокзал</th>
+    <th>Индиго</th>
+    <th>Щербинки</th>
+    <th>Парк культуры</th>
+  </tr>
+
+  <tr>
+    <td><%= User.where(:dostavka => 0).count %></td>
+    <td><%= User.where(:dostavka => 1).count %></td>
+    <td><%= User.where(:dostavka => 2).count %></td>
+    <td><%= User.where(:dostavka => 3).count %></td>
+    <td><%= User.where(:dostavka => 4).count %></td>
+  </tr>
+</table>
 <br />
                     </div>
 

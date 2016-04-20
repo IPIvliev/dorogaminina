@@ -37,6 +37,7 @@
           <th>Телефон</th>
           <th>Звено</th>
           <th>Размер футболки</th>
+          <th>Доставка</th>
         </tr>
       </thead>
 
@@ -50,6 +51,7 @@
           <td><%= @user.phone %></td>
           <td><%= @user.zveno.number if @user.zveno %></td>
           <td><%= @user.size %></td>
+          <td><%= dostavka(@user.dostavka) %></td>
         </tr>
       </tbody>
 </table>

@@ -1,5 +1,99 @@
-<h1>New zveno</h1>
+   <!-- NAVIGATION -->
+    <nav class="fixed-top1" id="navigation">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span12 center">
+                    <!-- LOGO -->
+                    <a class="brand pull-left" href="./">
+                        <img src="assets/images/logo.png" alt="Treble">
+                    </a>
+                    <!-- END LOGO -->
+
+                    <!-- MOBILE MENU BUTTON -->
+                    <div class="mobile-menu" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </div>
+                    <!-- END MOBILE MENU BUTTON -->
+                    
+                    <!-- MAIN MENU -->
+                    <ul id="main-menu" class="nav-collapse collapse">
+                        <li><a href="/index.html#page-welcome">Информация</a></li>
+                        <li><a href="/index.html#page-work">Регистрация</a></li>
+                        <li><a href="/index.html#page-features">Историческая справка</a></li>
+                        <li><a href="/index.html#page-about">Галерея</a></li>
+                    </ul>
+                    <!-- END MAIN MENU -->
+                    
+                    <!-- SOCIAL ICONS -->
+                    <div class="social-icons hover-big pull-right">
+                        <a href="#" class="sicon-facebook"><i>Facebook</i></a>
+                        <a href="#" class="sicon-twitter"><i>Twitter</i></a>
+                        <a href="#" class="sicon-linkedin"><i>LinkedIn</i></a>
+                        <a href="#" class="sicon-youtube"><i>Youtube</i></a>
+                        <a href="#" class="sicon-pinterest"><i>Pinterest</i></a>
+                    </div>
+                    <!-- END SOCIAL ICONS -->
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- END NAVIGATION -->
+
+    <div class="pages black-bg white page-contact" id="page-contact">
+        <div class="container">
+            <header>
+                <h4 class="line-divider">Личный кабинет</h4>
+                <h1>Здравствуйте,</h1>
+                <h2><%= current_user.name %></h2>
+                <div class="row">
+                    <div class="span8 offset2">
+                        <p>
+                            Здесь вы можете познакомиться с последники новостями велопробега, а также узнать статус взноса.
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+
+
+
+            <article>
+                <div class="row-fluid">
+                    <!-- Contact form -->
+                    <div class="span6">
+
+<h5>Добавить звено</h5>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', zvenos_path %>
+<%= link_to 'Назад', zvenos_path %>
+
+                    </div>
+
+                    <!-- End Contact form -->
+                    <!-- Contact information -->
+                    <div class="span5 offset1">
+
+                        <h5>Добро пожаловать</h5>
+                        <p>Мы рады приветствовать Вас тут.</p>
+
+<%= render "/shared/servicemenu" %>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <h5>Социальные вкладки</h5>
+                            <%= render "/shared/social" %>
+                    </div>
+                    <!-- End Contact information -->
+                </div>
+            </article>
+            <!-- End Article -->
+            <br><br><br><br><br>
+        </div>
+        
+        <!-- Background map image -->
+        <div id="map-image">
+            <img src="/images/map_bck.jpg" alt="Treble">
+        </div>
