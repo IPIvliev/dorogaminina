@@ -9,25 +9,37 @@
         <div class="container">
             <div class="row-fluid">
                 <div class="span12 center">
-
+                    <!-- Animated logo -->
+                    <div class="logo">
+                        <div class="scrollNormal">
+                            <a href="#page-registration">
+                                <img src="/images/logo_welcome.png" width="140" height="140">
+                            </a>
+                        </div>
+                        <div class="scrollDown">
+                            <a href="#page-registration">
+                                <img src="/images/logo2_welcome.png" width="140" height="140">
+                            </a>
+                        </div> 
+                    </div>
                     
                     <div class="line-divider" id="welcome-messages">
                         <ul class="slides">
 
                             <li>
-                                <h1>ДЕНЬ ПАМЯТИ И СКОРБИ</h1>
+                                <h1>ДОРОГА МИНИНА</h1>
                             </li>
                             <li>
-                                <h1 style="color: red;">22 июня!</h1>
+                                <h1 style="color: red;">15 мая 2016 года</h1>
                             </li>
                             <li>
-                                <h1>4:00 в Кремле</h1>
+                                <h1>Нижний Новгород - Балахна</h1>
                             </li>
 
                         </ul>
                     </div>
-                    <p>День памяти и скорби</p>
-                    <p style="color: red; font-size: 2em">22 июня в 4:00 в Нижегородском Кремле у Вечного огня!</p>
+                    <p>XI Открытый велопробег "Дорога Минина"</p>
+                    <p class="red" style="font-size:2em;">Велопробег состоится 15 мая 2016 года!</p>
                     <%= render "/shared/social" %>
                     <p></p>
                     <div class="social-icons sicon-white bordered">
@@ -37,9 +49,21 @@
                         <a href="http://government-nnov.ru" target="_blank">
                             <img src="/images/clients/07.jpeg" alt="Treble">
                         </a>
+
+                        <a href="#">
+                            <img src="/images/clients/napp.jpg" alt="Treble">
+                        </a>
+                        <a href="http://www.nizhprof.ru" target="_blank">
+                            <img src="/images/clients/oblsovprof.jpg" alt="Treble">
+                        </a>
                     </div><p>Организаторы проекта</p>
                     
+                    <div class="social-icons sicon-white bordered">
 
+                        <a href="#">
+                            <img src="/images/clients/lukoil.jpg" alt="Treble">
+                        </a>
+                    </div><p>ГЕНЕРАЛЬНЫЙ ПАРТНЁР ПРОЕКТА - КОМПАНИЯ "ЛУКОЙЛ"</p>
                 </div>
             </div>
         </div>
@@ -47,21 +71,32 @@
 </div>
 <!-- END PAGE | Welcome -->
 
+
+<%= render '/shared/registration' %>
+
+<%= render '/posts/for_index' %>
+
+
 <!-- PAGE | HISTORY  -->
 <div class="pages black-bg white page-features" id="page-history">
     <div class="overlay"></div>
     <div class="container">
      <!-- Header -->
      <header>
-        <h4 class="line-divider">О мероприятии</h4>                
-        <h1>Акция памяти <br><span class="red">ПЕРВЫЙ ВОЕННЫЙ РАССВЕТ</span></h1>
+        <h4 class="line-divider">О велопробеге</h4>                
+        <h1>История велопробега</h1>
         <div class="row">
             <div class="span8 offset2">
-                <p style="font-size: 24px">Дорогие участники велопробега "Дорога Минина"!</p>
-                <p style="font-size: 24px; line-height: 1.5;">Приглашаем Вас 22 июня, в День памяти и скорби, в 4 часа утра вспомнить наших соотечественников, которые 74 года назад, в этот день, встретили первый военный рассвет. 
+                <p>17 мая 2015 года состоится юбилейный X Открытый велопробег «Дорога Минина», посвященный 70-летию Победы в Великой Отечественной войне 1941-1945 годов. Велопробег проводится Фондом «Нижегородский Кремль» при поддержке Правительства Нижегородской области, Нижегородского областного объединения организаций профсоюзов «Облсовпроф» и Нижегородской Ассоциации промышленников и предпринимателей. Велопробег проводится ежегодно в воскресенье стоящее перед Днём памяти гражданина Минина (21 мая). Первый велопробег состоялся 21 мая 2006 года в 390-ую годовщину кончины Кузьмы Минина. Велопробег проходит по пути первого этапа движения Нижегородского ополчения 1612 года: Нижний Новгород – Балахна. Общая протяженность маршрута составляет 63 километра. К участию в велопробеге приглашаются лица, чтящие гражданский подвиг предков и достигшие 18-ти лет. Такого велопробега, как «Дорога Минина», и по содержанию, и по расстоянию, и по количеству участников, нет ни в одном регионе России. Генеральный партнер велопробега – Компания «ЛУКОЙЛ».
 </p>
-<p style="font-size: 24px; line-height: 1.5;">Собираемся в 3:45 в Нижегородском Кремле у Михайло-Архангельского собора и идём к Вечному огню. Проход в Кремль через ворота у Кладовой башни (движение по территории Кремля в пешем порядке). Желательно одеть футболку с велопробега "Дорога Минина - 2015" с логотипом 70 лет Победы. 
-
+                <ul><strong>Программа велопробега включает в себя:</strong>
+                    <li>встреча участников и распределение по звеньям на пл. Минина и Пожарского у памятника В.П. Чкалову;
+                        <li>старт от памятника Минину и Пожарскому на площади Народного единства в Нижнем Новгороде;
+                            <li>посещение танкового мемориала у завода «Красное Сормово»;
+                                <li>промежуточный финиш у памятника Минину в Балахне;
+                                    <li>привал в лесной зоне с солдатской кашей, развлекательной программой и спортивными играми;
+                                        <li>финиш на въезде в Нижний Новгород.
+                                        </ul>
                                     </div>
                                 </div>
                             </header>
@@ -71,36 +106,54 @@
                             <article>
                                 <!-- Features blocks -->
                                 <div class="row-fluid">
-                                    <div class="span3 center">
-                                        <a href="/images/22june/1.jpg" target="_blank" data-destination="portfolio-items" data-insert="before">
-                                            <img src="/images/22june/1.jpg" alt="Treble">
+                                    <div class="span4 center">
+                                        <a href="/images/about01.jpg" target="_blank" data-destination="portfolio-items" data-insert="before">
+                                            <img src="/images/about01.jpg" alt="Treble">
                                         </a>
-                                        <h5>Он был сыном, братом, любимым...</h5>
+                                        <h5>Маршрут велопробега</h5>
                                     </div>
-                                    <div class="span3 center">
-                                        <a href="/images/22june/2.jpg" target="_blank" data-destination="portfolio-items" data-insert="before">
-                                            <img src="/images/22june/2.jpg" alt="Treble">
-                                        </a>
-                                        <h5>В сентябре 41-ого был завхачен немцами</h5>
+                                    <div class="span4 center">
+                                        <iframe width="360" height="280" src="//www.youtube.com/embed/mr_t-xvZbcs" frameborder="0" allowfullscreen></iframe>
+                                        <h5>Видео с вертолёта</h5>
                                         
                                     </div>
-                                    <div class="span3 center">
-                                        <a href="/images/22june/3.jpg" target="_blank" data-destination="portfolio-items" data-insert="before">
-                                            <img src="/images/22june/3.jpg" alt="Treble">
-                                        </a>
-                                        <h5>Ведут на расстрел</h5>
-                                        
-                                    </div>
-                                    <div class="span3 center">
-                                        <a href="/images/22june/4.jpg" target="_blank" data-destination="portfolio-items" data-insert="before">
-                                            <img src="/images/22june/4.jpg" alt="Treble">
-                                        </a>
-                                        <h5>Расстреливают</h5>
+                                    <div class="span4 center">
+                                        <iframe width="360" height="280" src="//www.youtube.com/embed/nup2MUTSZE0" frameborder="0" allowfullscreen></iframe>
+                                        <h5>Слайд-шоу</h5>
                                         
                                     </div>
                                 </div>
-                                <p>Немецкая военная фотохроника. Сентябрь 1941.</p>
-                            <center><h1 class="red">ПОМНИМ, СКОРБИМ!</h1></center>
+                                <!-- Testemonials -->
+                                <div class="row-fluid">
+                                    <div class="span8 offset2">
+                                        <div class="quote center">
+                                            <div id="quote-slider" class="slide">
+                                                <!-- Carousel items -->
+                                                <div class="carousel-inner">
+                                                    <div class="active item">
+                                                        Огромное спасибо всем!! Покорило внимание и забота друг о друге! Отдельное спасибо Илье, звеньевому 21 звена, - классно ехали, ровно и быстро почти всегда! А ещё спасибо ребятам, которые помогли на "финишной прямой" по городу - здорово мчались с вами!!!
+                                                        <h5>Ксения Назаровская</h5>
+                                                    </div>
+                                                    <div class="item">
+                                                        Огромное спасибо организаторам этого пробега! я хоть и ехал почти в конце но мне всё понравилось!) Жду подобных мероприятий!!!
+                                                        <h5>Роман Ерышев</h5> 
+                                                    </div>
+                                                    <div class="item">
+                                                        Всем огромное спасибо! пробег был офигенный, нам очень понравилось всё! Вело-дзержинск хочет уже повторения) мега-круто было!
+                                                        <h5>Никита Дмитриев</h5>
+                                                    </div>
+
+                                                </div>
+                                                <!-- Carousel indicators -->
+                                                <ol class="carousel-indicators">
+                                                    <li data-target="#quote-slider" data-slide-to="0" class="active"></li>
+                                                    <li data-target="#quote-slider" data-slide-to="1"></li>
+                                                    <li data-target="#quote-slider" data-slide-to="2"></li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </article>
                             <!-- End Article -->
                         </div>
@@ -108,4 +161,162 @@
                     <!-- END PAGE | FEATURES -->
 
 
+                    <!-- PAGE | GALLERY -->
+                    <div class="pages page-work" id="page-gallery">
+                        <div class="container">
+                            <!-- Header -->
+                            <header>
+                                <h4 class="line-divider">Галерея</h4>
+                                <h1>Галерея</h1>
+                                <!-- Short desciption about Work in general -->
+                                <div class="row">
+                                    <div class="span8 offset2">
+                                        <p>
+                                            Здесь представлены фото и видео с предыдущих велопробегов. Большой вклад в подготовку галереи вложили его участники, передавая фотографии и видео в штаб организаторов.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Sub menu -->
+                <!-- 
+                Params: 
+                    plugin-filter: Defines links for filtering.
+                -->
+                <nav class="submenu">
+                    <ul>
+                        <li>
+                            <a href="#" class="plugin-filter active" data-filter="2014">Все</a>
+                        </li>
+                        <li>
+                            <a href="#" class="plugin-filter" data-filter="2006">2006</a>
+                        </li>
+                        <li>
+                            <a href="#" class="plugin-filter" data-filter="2007">2007</a>
+                        </li>
+                        <li>
+                            <a href="#" class="plugin-filter" data-filter="2008">2008</a>
+                        </li>
+                        <li>
+                            <a href="#" class="plugin-filter" data-filter="2009">2009</a>
+                        </li>
+                       <li>
+                            <a href="#" class="plugin-filter" data-filter="2010">2010</a>
+                        </li>
+                       <li>
+                            <a href="#" class="plugin-filter" data-filter="2011">2011</a>
+                        </li>
+                       <li>
+                            <a href="#" class="plugin-filter" data-filter="2012">2012</a>
+                        </li>
+                       <li>
+                            <a href="#" class="plugin-filter" data-filter="2013">2013</a>
+                        </li>
+                       <li>
+                            <a href="#" class="plugin-filter" data-filter="2014">2014</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <!-- End Header -->
+            
+            <!-- Article -->
+            <article>
+                <!-- Portfolio items
+                    Params: 
+                        plugin-filter-elements: Defines items for filtering, each item has class which defines filter value.
+                        portfolio-items: Customise portfolio items for hover effect.
+                    -->
+                    <ul class="thumbnails plugin-filter-elements portfolio-items">
+                        <li class="span4 mix 2006">
+                            <a href="#pages/portfolio/project_1.html" data-destination="portfolio-items" data-insert="before">
+                                <!-- Portfolio image -->
+                                <img src="/images/works/01.jpg" alt="Treble">
+                                
+                                <!-- Portfolio name, activated on hover -->
+                                <div class="portfolio-overlay">
+                                    <h4>2007</h4>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="span4 mix 2012">
+                            <a href="#pages/portfolio/project_2.html" data-destination="portfolio-items" data-insert="before">
+                                <img src="/images/works/02.jpg" alt="Treble">
+                                <div class="portfolio-overlay">
+                                    <h4>2008</h4>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="span4 mix start">
+                            <a href="#pages/portfolio/project_3.html" data-destination="portfolio-items" data-insert="before">
+                                <img src="/images/works/03.jpg" alt="Treble">
+                                <div class="portfolio-overlay">
+                                    <h4>2009</h4>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="span4 mix 2007">
+                            <a href="#" data-destination="portfolio-items" data-insert="before">
+                                <img src="/images/works/10.jpg" alt="Treble">
+                                <div class="portfolio-overlay">
+                                    <h4>2010</h4>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="span4 mix 2008">
+                            <a href="#pages/portfolio/project_5.html" data-destination="portfolio-items" data-insert="before">
+                                <img src="/images/works/05.jpg" alt="Treble">
+                                <div class="portfolio-overlay">
+                                    <h4>2011</h4>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="span4 mix 2009">
+                            <a href="#pages/portfolio/project_6.html" data-destination="portfolio-items" data-insert="before">
+                                <img src="/images/works/06.jpg" alt="Treble">
+                                <div class="portfolio-overlay">
+                                    <h4>2012</h4>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="span4 mix 2010">
+                            <a href="#pages/portfolio/project_7.html" data-destination="portfolio-items" data-insert="before">
+                                <img src="/images/works/07.jpg" alt="Treble">
+                                <div class="portfolio-overlay">
+                                    <h4>2013</h4>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="span4 mix 2011">
+                            <a href="#pages/portfolio/project_8.html" data-destination="portfolio-items" data-insert="before">
+                                <img src="/images/works/08.jpg" alt="Treble">
+                                <div class="portfolio-overlay">
+                                    <h4>Регистрация</h4>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="span4 mix 2012">
+                            <a href="#pages/portfolio/project_9.html" data-destination="portfolio-items" data-insert="before">
+                                <img src="/images/works/09.jpg" alt="Treble">
+                                <div class="portfolio-overlay">
+                                    <h4>Движение</h4>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </article>
+                <!-- End Article -->
+                
+                <!-- 
+                <footer>
+                    <div class="show-more-cube">
+                     <a href="#readmore.html" data-destination="plugin-filter-elements" data-insert="appendTo" data-action="remove">
+                        <span>Показать<br/>все</span>
+                    </a>
+                </div>
+            </footer>
+       -->
+        </div>
+    </div>
     <!-- END PAGE | WORK -->
+
+    <%= render '/shared/partners' %>

@@ -55,7 +55,7 @@ before_filter :authenticate_user!
       else
         format.html { redirect_to root_path,
         notice: 'Поздравляем! Вы подали заявку на регистрацию. Для подтверждения регистрации 
-        необходимо внести взнос в размере 350 рублей.' }
+        необходимо внести взнос в размере 450 рублей.' }
       end
     end
   end
@@ -73,7 +73,7 @@ before_filter :authenticate_user!
         # @user.zveno.update_attribute(:free, newfree)
 
         format.html { redirect_to @user,
-        notice: 'Поздравляем! Вы успешно зарегистрировались на X Открытый велопробег Дорога Минина!' }
+        notice: 'Поздравляем! Вы успешно зарегистрировались на XI Открытый велопробег Дорога Минина!' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -95,6 +95,11 @@ before_filter :authenticate_user!
     end
   end
 
+  def dotkaz
+    @user = User.find(params[:user])
+    @user.update_attribute(:dostavka, 9)
+    redirect_to(:back)
+  end
 
   private
   

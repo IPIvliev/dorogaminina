@@ -3,7 +3,11 @@
   <div class="pages black-bg white page-contact" id="page-contact">
     <div class="container">
       <% if current_user == @user || current_user.role == 2 %>
-      <% if @user.paid == 0 %>
+      <% if @user.paid == 0 && @user.dostavka == 9 %>
+
+      <%= render "/shared/dostavka" %>
+
+      <% elsif @user.paid == 0 && @user.dostavka != 9 %>
 
       <%= render "/shared/oplata" %>
 

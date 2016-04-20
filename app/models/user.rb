@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :lastname, :name, :otchestvo, :phone, :request_id, :zveno_id, :size, :more
+  attr_accessible :lastname, :name, :otchestvo, :phone, :request_id, :zveno_id, :size, :more, :dostavka
 
   validates :name, presence: true
   validates :lastname, presence: true

@@ -29,6 +29,7 @@ Dorogaminina::Application.routes.draw do
   match "/statistics.html", :to => "static_pages#statistics"
   match "user/edit_paid", :to => "requests#edit_paid"
   match "user/edit_can", :to => "zvenos#edit_can"
+  match "user/dostavka_otkaz", :to => "users#dotkaz", :as => :user_dotkaz
   match 'advice/create', to: 'static_pages#add_advice'
 
 # Корневая страница

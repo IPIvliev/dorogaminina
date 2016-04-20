@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-if RUBY_VERSION =~ /1.9/ # assuming you're running Ruby ~1.9
-  Encoding.default_external = Encoding::UTF_8
-  Encoding.default_internal = Encoding::UTF_8
-end
+#if RUBY_VERSION =~ /1.9/ # assuming you're running Ruby ~1.9
+#  Encoding.default_external = Encoding::UTF_8
+#  Encoding.default_internal = Encoding::UTF_8
+#end
 
 gem 'rails', '3.2.13'
 gem 'kaminari'
@@ -12,14 +12,12 @@ gem 'bootstrap-will_paginate', '0.0.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem "breadcrumbs_on_rails"
 gem 'russian'
 gem 'thin'
+gem 'safe_yaml', '0.6.3'
 
-group :production do
-  gem 'mysql2'
-end
+gem "mysql2", "~> 0.3.10"
 
 # Admin panel
 gem 'rails_admin'
