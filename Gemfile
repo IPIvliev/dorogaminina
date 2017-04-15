@@ -29,6 +29,7 @@ gem 'axlsx_rails'
 
 # Design
 gem 'css3-progress-bar-rails'
+gem 'bxslider-rails'
 
 # Money
 gem 'activemerchant', :require => 'active_merchant'
