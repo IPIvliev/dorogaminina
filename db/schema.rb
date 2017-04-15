@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160420082255) do
+ActiveRecord::Schema.define(:version => 20170415172930) do
 
   create_table "advices", :force => true do |t|
     t.text     "text"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20160420082255) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.integer  "dostavka",               :limit => 1, :default => 9
+    t.integer  "tshirt",                 :limit => 1, :default => 0
   end
 
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
