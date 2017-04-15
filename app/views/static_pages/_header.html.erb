@@ -5,7 +5,7 @@
                 <div class="span12 center">
                     <!-- LOGO -->
                     <a class="brand pull-left" href="./">
-                        XI Открытый велопробег "Дорога Минина"
+                        XII Открытый велопробег "Дорога Минина"
                     </a>
                     <!-- END LOGO -->
 
@@ -23,10 +23,11 @@
                             <% if current_user %>
                                 <li><%= link_to "Логин", current_user %></li>
                             <% else %>
-                                <li><a href="#page-registration">Ваши предложения</a></li>
+                                <li><a href="#page-registration">Регистрация</a></li>
                             <% end %>
-                        <li><a href="#page-blog">Новости</a></li>
-                        <li><a href="#page-history">Справка</a></li>
+                        
+                        <li><a href="#page-history">О проекте</a></li>
+                        <li><a href="#page-foundation">Интерактивная выставка</a></li>
                         <li><a href="#page-gallery">Галерея</a></li>
                         <li><a href="#page-clients">Партнёры</a></li>
                         <li><%= link_to('Выход', destroy_user_session_path, :method => :delete, :class => "btn", :disable_with => "Подождите...") if current_user %></li>
