@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20170415172930) do
+ActiveRecord::Schema.define(:version => 20170417110244) do
 
   create_table "advices", :force => true do |t|
     t.text     "text"
@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(:version => 20170415172930) do
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
+  create_table "tshirts", :force => true do |t|
+    t.string   "description"
+    t.string   "image"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "lastname"
@@ -64,7 +71,7 @@ ActiveRecord::Schema.define(:version => 20170415172930) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.integer  "dostavka",               :limit => 1, :default => 9
-    t.integer  "tshirt",                 :limit => 1, :default => 0
+    t.integer  "tshirt_id",              :limit => 1, :default => 0
   end
 
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true

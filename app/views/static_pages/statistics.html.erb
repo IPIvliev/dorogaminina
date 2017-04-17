@@ -27,42 +27,49 @@
 <h5>Статистика по участникам</h5>
 <table class="table table-bordered">
   <tr>
-    <th>Всего участников</th>
+    <th>Всего регистраций</th>
     <th>Не оплатили</th>
-    <th>В ожидании оплаты</th>
     <th>Оплатили</th>
-    <th>Средств на счету</th>
   </tr>
 
   <tr>
     <td><%= @users %></td>
     <td><%= @userspaid0 %></td>
-    <td><%= @userspaid1 %></td>
     <td><%= @userspaid2 %></td>
-    <td><%= @userspaid2 * 450 %></td>
   </tr>
 </table>
-<br><br>
+<br>
 
 <h5>Футболки</h5>
+
+
 <table class="table table-bordered">
   <tr>
+    <th>ID футболки</th>
     <th>S</th>
     <th>M</th>
     <th>L</th>
     <th>XL</th>
     <th>XXL</th>
+    <th>Итого</th>
   </tr>
 
-  <tr>
-    <td><%= User.where(:size => "S").count %></td>
-    <td><%= User.where(:size => "M").count %></td>
-    <td><%= User.where(:size => "L").count %></td>
-    <td><%= User.where(:size => "XL").count %></td>
-    <td><%= User.where(:size => "XXL").count %></td>
-  </tr>
+<% Tshirt.all.each do |tshirt| %>
+    <tr>
+        <td><%= tshirt.id %></td>
+        <td><%= tshirt.users.where(:size => "S").count %></td>
+        <td><%= tshirt.users.where(:size => "M").count %></td>
+        <td><%= tshirt.users.where(:size => "L").count %></td>
+        <td><%= tshirt.users.where(:size => "XL").count %></td>
+        <td><%= tshirt.users.where(:size => "XXL").count %></td>
+        <td><%= tshirt.users.count %>
+    </tr>
+<% end %>
+  
 </table>
-<br><br>
+
+
+<br>
 
 <h5>Доставка</h5>
 <table class="table table-bordered">

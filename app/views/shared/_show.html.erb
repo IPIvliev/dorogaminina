@@ -1,7 +1,7 @@
       <header>
         <h4 class="line-divider">Регистрация на велопробег</h4>
         <h1>Личный кабинет</h1>
-        <h2>Вы успешно зарегистрировались на велопробег "Дорога Минина - 2016"</h2>
+        <h2>Вы успешно зарегистрировались на велопробег "Дорога Минина - 2017"</h2>
         <div class="row">
           <div class="span8 offset2">
             <p>
@@ -36,8 +36,6 @@
           <th>Отчество</th>
           <th>Телефон</th>
           <th>Звено</th>
-          <th>Размер футболки</th>
-          <th>Доставка</th>
         </tr>
       </thead>
 
@@ -50,10 +48,26 @@
           <td><%= @user.otchestvo %></td>
           <td><%= @user.phone %></td>
           <td><%= @user.zveno.number if @user.zveno %></td>
-          <td><%= @user.size %></td>
-          <td><%= dostavka(@user.dostavka) %></td>
         </tr>
       </tbody>
+</table>
+
+<table class="table table-bordered">
+  <thead>
+        <tr>
+          <th>Размер футболки</th>
+          <th>Футболка</th>
+          <th>Доставка</th>
+        </tr>
+  </thead>
+  <tbody>
+        <tr>
+          <td><%= @user.size %></td>
+          <td><%= image_tag(@user.tshirt.image_url) %></td>
+          <td><%= dostavka(@user.dostavka) %></td>
+        </tr>
+  </tbody>
+
 </table>
 
 <%= link_to('Выйти из личного кабинета', destroy_user_session_path, :method => :delete, :class => "btn", :disable_with => "Подождите...") if current_user %>
@@ -61,7 +75,7 @@
 <div class="bs-callout bs-callout-warning">
     <h4>Внимание!</h4>
     <p>Вам необходимо запомнить свой номер ID (<strong class="red"><%= @user.id %></strong>). Подтверждение участия будет происходит по вашему номеру!</p>
-    <p><strong class="red">Сбор участников велопробега состоится 15 мая в 8:00 на площади Минина возле памятника Чкалову.</strong></p>
+    <p><strong class="red">Сбор участников велопробега состоится 21 мая в 8:00 на площади Минина возле памятника Чкалову.</strong></p>
 </div>
 
 </div>
@@ -72,10 +86,10 @@
         <%= render '/posts/short_news' %>
 
         <h5>Добро пожаловать</h5>
-        <p>Велопробег состоится 15 мая 2016 года.</p>
-        <strong class="red">Сбор участников велопробега состоится 15 мая в 8:00 на площади Минина возле памятника Чкалову.</strong><br>
+        <p>Велопробег состоится 21 мая 2017 года.</p>
+        <strong class="red">Сбор участников велопробега состоится 21 мая в 8:00 на площади Минина и Пожарского (у памятника Чкалову).</strong><br>
 
-        <strong>Телефон для справок: 8 (831) 433-10-50, 8-920-293-10-50</strong>
+        <strong>Телефон для справок: 8-920-293-10-50</strong>
 
         <%= render "/shared/servicemenu" %>
         <br/>

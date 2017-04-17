@@ -1,0 +1,25 @@
+<%= form_for(@tshirt) do |f| %>
+  <% if @tshirt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tshirt.errors.count, "error") %> prohibited this tshirt from being saved:</h2>
+
+      <ul>
+      <% @tshirt.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Описание'%><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label 'Изображение' %><br />
+    <%= image_tag @tshirt.image_url if @tshirt.image_url %> <%= f.file_field :image, :class => "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

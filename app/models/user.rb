@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :lastname, :name, :otchestvo, :phone, :request_id, :zveno_id, :size, :more, :dostavka, :tshirt
+  attr_accessible :lastname, :name, :otchestvo, :phone, :request_id, :zveno_id, :size, :more, :dostavka, :tshirt_id
 
   validates :name, presence: true
   validates :lastname, presence: true
@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   paginates_per 50
 
   belongs_to :zveno
+  belongs_to :tshirt
 
   def email_required?
     false

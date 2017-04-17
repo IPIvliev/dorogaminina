@@ -22,10 +22,22 @@
     <br><br>
     <lable>Укажите размер футболки:</lable>
     <%= f.select(:size, [['S', 'S'], ['M', 'M'], ['L', 'L'], ['XL', 'XL'], ['XXL', 'XXL']], {}, { :class => 'span12' }) %>
+<br>
+
 
     <br><br>
     <lable>Выберите внешний вид футболки:</lable>
-    <%= f.select(:tshirt, [['1', '1'], ['2', '2'], ['3', '3'], ['4', '4'], ['5', '5'], ['6', '6']], {}, { :class => 'span12' }) %>
+
+<div class="row">
+    <% Tshirt.all.each do |tshirt| %>
+      <div class="span4">
+        <%= f.radio_button :tshirt_id, tshirt.id, :checked => true, :id => "radio#{tshirt.id}" %>
+        <%= f.label :tshirt_id, "#{tshirt.description} #{image_tag(tshirt.image_url)}".html_safe, :value => "tshirt.id", :for => "radio#{tshirt.id}" %>
+      </div>
+    <% end %>
+</div>
+
+
 
     <% if current_user.role == 2 %>
         <br><br>

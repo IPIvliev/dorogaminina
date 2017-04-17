@@ -1,5 +1,8 @@
 Dorogaminina::Application.routes.draw do
 
+  resources :tshirts
+
+
   mount RailsAdmin::Engine => '/kro', :as => 'rails_admin'
 
   resources :posts

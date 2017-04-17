@@ -1,8 +1,8 @@
 class Zveno < ActiveRecord::Base
-  attr_accessible :number, :vse, :free
+  attr_accessible :number, :vse, :free, :can
 
   scope :add_on, where(:can => true) 
-  scope :with_n_users, -> { select { |w| w.users.size < w.vse } }
+  scope :with_n_users, -> { select { |w| w.users.count < w.vse } }
 
 
   has_many :users

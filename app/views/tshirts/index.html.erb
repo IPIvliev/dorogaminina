@@ -1,0 +1,70 @@
+    <!-- NAVIGATION -->
+<%= render '/shared/navigation' %>
+    <!-- END NAVIGATION -->
+
+    <div class="pages black-bg white page-contact" id="page-contact">
+        <div class="container">
+            <header>
+                <h4 class="line-divider">Личный кабинет</h4>
+                <h1>Здравствуйте,</h1>
+                <h2><%= current_user.name %></h2>
+                <div class="row">
+                    <div class="span8 offset2">
+                        <p>
+                            Здесь вы можете познакомиться с последники новостями велопробега, а также узнать статус взноса.
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+            <div class="row-fluid">
+                <div class="span8 blog-details">
+
+                <h1>Listing tshirts</h1>
+
+                <table class="table table-bordered">
+                  <tr>
+                    <th>Номер</th>
+                    <th>Описание</th>
+                    <th>Изображение</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+
+                <% @tshirts.each do |tshirt| %>
+                  <tr>
+                    <td><%= tshirt.id %></td>
+                    <td><%= tshirt.description %></td>
+                    <td><%= image_tag tshirt.image_url %></td>
+                    <td><%= link_to 'Подробно', tshirt %></td>
+                    <td><%= link_to 'Изменить', edit_tshirt_path(tshirt) %></td>
+                    <td><%= link_to 'Удалить', tshirt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+                <% end %>
+                </table>
+
+                <br />
+
+<%= link_to 'Добавить футболку', new_tshirt_path %>
+
+                </div>
+                <div class="span4 blog-list-right">
+                    <!-- Latest blog posts block -->
+                    <div class="block">
+                      <%= render '/posts/short_news' %>
+                    </div>
+                    
+                    <!-- Tags -->
+                    <div class="block">
+                                            <!-- Tags -->
+<% if current_user %>
+        <%= render "/shared/servicemenu" %>
+ <% end %>
+        <%= render "/shared/headsocial" %>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>

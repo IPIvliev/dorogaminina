@@ -1,0 +1,58 @@
+    <!-- NAVIGATION -->
+<%= render '/shared/navigation' %>
+    <!-- END NAVIGATION -->
+
+    <div class="pages black-bg white page-contact" id="page-contact">
+        <div class="container">
+            <header>
+                <h4 class="line-divider">Личный кабинет</h4>
+                <h1>Здравствуйте,</h1>
+                <h2><%= current_user.name %></h2>
+                <div class="row">
+                    <div class="span8 offset2">
+                        <p>
+                            Здесь вы можете познакомиться с последники новостями велопробега, а также узнать статус взноса.
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+            <div class="row-fluid">
+                <div class="span8 blog-details">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Описание:</b>
+  <%= @tshirt.description %>
+</p>
+
+<p>
+  <b>Изображение:</b>
+  <%= image_tag @tshirt.image_url %>
+</p>
+
+
+<%= link_to 'Изменить', edit_tshirt_path(@tshirt) %> |
+<%= link_to 'Назад', tshirts_path %>
+
+                </div>
+                <div class="span4 blog-list-right">
+                    <!-- Latest blog posts block -->
+                    <div class="block">
+                      <%= render '/posts/short_news' %>
+                    </div>
+                    
+                    <!-- Tags -->
+                    <div class="block">
+                                            <!-- Tags -->
+<% if current_user %>
+        <%= render "/shared/servicemenu" %>
+ <% end %>
+        <%= render "/shared/headsocial" %>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
