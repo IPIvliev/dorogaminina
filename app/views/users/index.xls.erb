@@ -20,8 +20,8 @@
 		<td><%= user.phone %></td>
 		<td><%= user.zveno.number if user.zveno %></td>
 		<td><%= user.size %></td>
-		<td><%= user.tshirt.id %></td>
-		<td><%= user.tshirt.description %></td>
+		<td><%= user.tshirt.id if user.tshirt.present? %></td>
+		<td><%= user.tshirt.description if user.tshirt.present? %></td>
 		<td><%= vznosstatus(user.paid) %></td>
 		<td><%= dostavka(user.dostavka) %></td>
 	</tr>

@@ -101,7 +101,7 @@
     <td><%= user.lastname %></td>
     <td><%= user.name %></td>
     <td><%= user.phone %></td>
-    <td><%= user.size %></td>
+    <td><%= "Размер #{user.size} / Номер #{user.tshirt.id if user.tshirt.present? }" %></td>
     <td><%= link_to user.zveno_id, user.zveno %></td>
     <td><%= link_to vznosstatus(user.paid), :controller => :requests, :action => :edit_paid, :user => user %></td>
     <td><%= link_to 'Изменить', edit_user_path(user) %></td>
