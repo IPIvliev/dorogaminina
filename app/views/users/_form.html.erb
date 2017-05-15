@@ -34,7 +34,7 @@
       <% tshirts.each do |tshirt| %>
         <div class="span4">
           <%= f.radio_button :tshirt_id, tshirt.id, :id => "radio#{tshirt.id}" %><br>
-          <%= f.label :tshirt_id, "#{image_tag(tshirt.image_url)} #{tshirt.description}".html_safe, :value => "tshirt.id", :for => "radio#{tshirt.id}" %>
+          <%= f.label :tshirt_id, "#{image_tag(tshirt.image_url)} #{tshirt.description}.".html_safe, :value => "tshirt.id", :for => "radio#{tshirt.id}" %>
         </div>
       <% end %>
     </div>
