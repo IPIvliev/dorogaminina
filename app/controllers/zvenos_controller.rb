@@ -3,7 +3,7 @@ before_filter :authenticate_user!
   # GET /zvenos
   # GET /zvenos.json
   def index
-    @zvenos = Zveno.all
+    @zvenos = Zveno.order("number ASC")
 
     respond_to do |format|
       format.html # index.html.erb
