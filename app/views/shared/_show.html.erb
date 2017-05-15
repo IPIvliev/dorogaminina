@@ -47,7 +47,7 @@
           <td><%= @user.name %></td>
           <td><%= @user.otchestvo %></td>
           <td><%= @user.phone %></td>
-          <td><%= @user.zveno.number if @user.zveno %></td>
+          <td><%= @user.zveno.number if @user.zveno.exist? %></td>
         </tr>
       </tbody>
 </table>
