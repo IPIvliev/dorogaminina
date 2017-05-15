@@ -35,6 +35,7 @@
           <th>Имя</th>
           <th>Отчество</th>
           <th>Телефон</th>
+          <th>Звено</th>
         </tr>
       </thead>
 
@@ -46,6 +47,7 @@
           <td><%= @user.name %></td>
           <td><%= @user.otchestvo %></td>
           <td><%= @user.phone %></td>
+          <td><%= @user.zveno.number if @user.zveno.present? %></td>
         </tr>
       </tbody>
 </table>
