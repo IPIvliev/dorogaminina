@@ -66,13 +66,7 @@
 
 <h5>Служебная регистрация нового участника велопробега</h5>
 
-
-
-
-
-
-
-<%= form_for @user do |f| %>
+<%= form_for User.new do |f| %>
                 
     <%= f.text_field :lastname, :class => "span4", :placeholder => "Фамилия", :required => "required" %>
     <%= f.text_field :name, :class => "span4", :placeholder => "Имя", :required => "required" %>
@@ -81,12 +75,23 @@
     <%= f.text_field :phone, :class => "span12", :placeholder => "Телефон", :required => "required", :id => "phone" %>
     <br><br>
     <lable>Укажите звено, в котором вы хотите поехать:</lable>
-    <%= f.collection_select(:zveno_id, Zveno.where("free > ?", 0), :number, :number, {}, {:class=>'span12 my-custom-class'}) %>
+    <%= f.collection_select(:zveno_id, Zveno.all, :id, :number, {}, {:class=>'span12 my-custom-class'}) %>
 
     <br><br>
     <lable>Укажите размер футболки:</lable>
     <%= f.select(:size, [['S', 'S'], ['M', 'M'], ['L', 'L'], ['XL', 'XL'], ['XXL', 'XXL']], {}, { :class => 'span12' }) %>
-
+        <br><br>
+    <lable>Выберите футболку:</lable>
+    <% Tshirt.all.each_slice(3) do |tshirts| %>
+        <div class="row">
+          <% tshirts.each do |tshirt| %>
+            <div class="span4">
+              <%= f.radio_button :tshirt_id, tshirt.id, :id => "radio#{tshirt.id}" %><br>
+              <%= f.label :tshirt_id, "#{image_tag(tshirt.image_url)} #{tshirt.description}.".html_safe, :value => "tshirt.id", :for => "radio#{tshirt.id}" %>
+            </div>
+          <% end %>
+        </div>
+    <% end %> 
             <% password_length = 4 %>
         <% password = Devise.friendly_token.first(password_length) %>
 
