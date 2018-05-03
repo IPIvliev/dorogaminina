@@ -56,18 +56,18 @@
   <thead>
         <tr>
           <th>Размер футболки</th>
-
+        <!-- Если есть выбор футболки
           <th>Футболка</th>
-
+        -->
           <th>Доставка</th>
         </tr>
   </thead>
   <tbody>
         <tr>
           <td><%= @user.size %></td>
-
-          <td><%= image_tag(@user.tshirt.image_url) %></td>
-
+        <!-- Если есть выбор футболки
+          <td> image_tag(@user.tshirt.image_url) </td>
+        -->
           <td><%= dostavka(@user.dostavka) %></td>
         </tr>
   </tbody>
