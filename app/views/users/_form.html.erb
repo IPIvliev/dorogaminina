@@ -41,7 +41,7 @@
   <% end %>
 <% else %>
   <!-- Если выбирать футболки уже нельзя, то футболка стандартная -->
-    <%= f.hidden_field :tshirt_id, :value => 5 %>
+    <%= f.hidden_field :tshirt_id, :value => 1 %>
 <% end %>
 
     <% if current_user.role == 2 %>
