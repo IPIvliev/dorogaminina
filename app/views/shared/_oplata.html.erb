@@ -33,7 +33,7 @@
 
         <% numzakaz = current_user.id + 21000 %>
         <% if current_user.dostavka == 9 || current_user.dostavka == 0 %>
-          <% amount = 700 %>
+          <% amount = 1 %>
           <%= link_to "Включить в стоимость доставку", user_dotkaz_path(:user => current_user.id) %>
         <% else %>
           <% amount = 1050 %>
