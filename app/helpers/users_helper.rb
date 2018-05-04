@@ -18,11 +18,11 @@ module UsersHelper
 			when 0
 				return "Без доставки".html_safe
 			when 1
-				return "Московский вокзал".html_safe
+				return "пл. Минина - ТЦ Индиго".html_safe
 			when 2
-				return "Индиго Лайф".html_safe
+				return "ост. Дворец Спорта - Щербинки-2".html_safe
 			when 3
-				return "Щербинки 2".html_safe
+				return "ст.м. Заречнная (Нижний Новгород) - ТЦ Окей (пр. Ленина, 113)".html_safe
 			when 4
 				return "Парк Культуры".html_safe
 		end
