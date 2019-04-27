@@ -77,15 +77,13 @@
     <th>Без доставки</th>
     <th>Индиго</th>
     <th>Щербинки</th>
-    <th>ТЦ Окей</th>
   </tr>
 
   <tr>
     <td><%= User.where('dostavka=? AND paid=?', 0, 2).count %></td>
     <td><%= User.where('dostavka=? AND paid=?', 1, 2).count %></td>
     <td><%= User.where('dostavka=? AND paid=?', 2, 2).count %></td>
-    <td><%= User.where('dostavka=? AND paid=?', 3, 2).count %></td>
-  </tr>
+   </tr>
 </table>
 <br />
                     </div>

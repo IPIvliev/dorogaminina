@@ -20,7 +20,7 @@ module UsersHelper
 			when 1
 				return "пл. Минина - ТЦ Индиго".html_safe
 			when 2
-				return "ост. Дворец Спорта - Щербинки-2".html_safe
+				return "Щербинки-2 - ост. Дворец Спорта".html_safe
 			when 3
 				return "ст.м. Заречнная (Нижний Новгород) - ТЦ Окей (пр. Ленина, 113)".html_safe
 			when 4
