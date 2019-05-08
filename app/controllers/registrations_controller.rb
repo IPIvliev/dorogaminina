@@ -9,7 +9,7 @@ class RegistrationsController < Devise::RegistrationsController
 	super
 	RestClient.post(
 		"http://sms.ru/sms/send", 
-		:api_id => "5F49DE4A-1D74-D8EA-64ED-A734E0799D07", 
+		:api_id => "0FB7E9F9-C603-1E11-9C97-4D427CB43F09", 
 		:to => @user.phone, 
 		:text => "Ваш ID на велопробег #{@user.id}, пароль #{@user.more}"
 		)
