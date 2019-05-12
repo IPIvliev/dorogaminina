@@ -24,25 +24,27 @@
     <%= f.select(:size, [['S', 'S'], ['M', 'M'], ['L', 'L'], ['XL', 'XL'], ['XXL', 'XXL']], {}, { :class => 'span12' }) %>
 <br>
 
-<!-- Выбор футболки -->
-<% if current_user.role == 2 %>
+<!--Выбор футболки
+ if current_user.role == 2
       <br><br>
       <lable>Выберите внешний вид футболки:</lable>
 
-  <% Tshirt.all.each_slice(3) do |tshirts| %>
+   Tshirt.all.each_slice(3) do |tshirts|
     <div class="row">
-      <% tshirts.each do |tshirt| %>
+       tshirts.each do |tshirt|
         <div class="span4">
-          <%= f.radio_button :tshirt_id, tshirt.id, :id => "radio#{tshirt.id}" %><br>
-          <%= f.label :tshirt_id, "#{image_tag(tshirt.image_url)} #{tshirt.description}.".html_safe, :value => "tshirt.id", :for => "radio#{tshirt.id}" %>
+           f.radio_button :tshirt_id, tshirt.id, :id => "radio#{tshirt.id}" <br>
+           f.label :tshirt_id, "#{image_tag(tshirt.image_url)} #{tshirt.description}.".html_safe, :value => "tshirt.id", :for => "radio#{tshirt.id}"
         </div>
-      <% end %>
+        end
     </div>
-  <% end %>
-<% else %>
-  <!-- Если выбирать футболки уже нельзя, то футболка стандартная -->
-    <%= f.hidden_field :tshirt_id, :value => 1 %>
-<% end %>
+   end 
+ else 
+ -->
+  <!-- Если выбирать футболки уже нельзя, то футболка стандартная
+    f.hidden_field :tshirt_id, :value => 1
+end
+-->
 
     <% if current_user.role == 2 %>
         <br><br>
