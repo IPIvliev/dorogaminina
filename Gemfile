@@ -18,7 +18,7 @@ gem 'thin'
 gem 'safe_yaml', '0.6.3'
 
 # gem "mysql2", "~> 0.3.10"
-gem 'sqlite3'
+gem 'sqlite3', '~> 1.3.6'
 
 # Admin panel
 gem 'rails_admin'
