@@ -6,8 +6,8 @@ class RobokassaController < ApplicationController
 
   skip_before_filter :verify_authenticity_token # skip before filter if you chosen POST request for callbacks
 
-  before_filter :create_notification
-  before_filter :find_payment
+  before_action :create_notification
+  before_action :find_payment
 
   # Robokassa call this action after transaction
   def paid
